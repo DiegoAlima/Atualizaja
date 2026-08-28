@@ -10,7 +10,7 @@
     <title>Atualiza já</title>
 </head>
 
-<body>
+<body id="inicio">
     <main>
         <header>
             <!-- BOTÃO MENU -->
@@ -27,15 +27,15 @@
             <div class="menu-mobile" id="menuMobile">
 
                 <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#portfolio">Portifólio</a></li>
-            <li><a href="#depoimentos">Depoimentos</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
+                    <ul>
+                        <li><a href="#inicio">INICIO</a></li>
+                        <li><a href="#sobre">SOBRE</a></li>
+                        <li><a href="#servicos">SERVIÇOS</a></li>
+                        <li><a href="#portfolio">PORTIFOLIO</a></li>
+                        <li><a href="#depoimentos">DEPOIMENTOS</a></li>
+                        <li><a href="#contato">CONTATO</a></li>
+                    </ul>
+                </nav>
             </div>
 
             <!-- TOPO -->
@@ -55,18 +55,13 @@
                             <nav>
                                 <ul>
 
-                                    <li><a href="#">Inicio</a></li>
-
-                                    <li><a href="#">Sobre</a></li>
-
-                                    <li><a href="#">Serviços</a></li>
-
-                                    <li><a href="#">Portifólio</a></li>
-                                    <li><a href="#">Depoimentos</a></li>
-                                    <li><a href="#">Contato</a></li>
-                                    <li class="no-hover">
-                                        <a href="#"> <i class="bi bi-chat-left-text"></i> Fele conosco</a>
-                                    </li>
+                                    <li><a href="#inicio">Inicio</a></li>
+                                    <li><a href="#sobre">Sobre</a></li>
+                                    <li><a href="#servicos">Serviços</a></li>
+                                    <li><a href="#portfolio">Portifólio</a></li>
+                                    <li><a href="#depoimentos">Depoimentos</a></li>
+                                    <li class="no-hover"><a href="#contato"><i class="bi bi-chat-left-text"></i> Fale conosco</a></li>
+                                
                                 </ul>
                             </nav>
 
@@ -217,8 +212,7 @@
                     <p>Seu site sempre atualizado e seguro </p>
                 </div>
             </div>
-            <a href="#" class="aj-btn">
-                Ver todos os serviços <i class="bi bi-arrow-right"></i>
+            <a href="#" class="aj-btn">Ver todos os serviços</i>
             </a>
         </section>
 
@@ -577,13 +571,12 @@
                 </div>
             </section>
         </section>
-        <section class="faq" id="faleconosco">
+        <section class="faq" id="contato">
 
             <div class="faq-titulo">
                 <span>Atendimento Personalizado</span>
-                <h2>Seu negocio merece um site com sua cara!</h2>
-                <p>Prencha os dados e receba uma consultoria gratis da sua ideia, vamos criar um design personalizado
-                    pra você ver como ficaria seu projeto na pratica, totalmente sem compromisso!.</p>
+                <h2>Quer ver como o site da sua empresa ficaria na prática?</h2>
+                <p>Preencha os campos abaixo e receba um design personalizado e uma consultoria estratégica, tudo isso totalmente sem compromisso.</p>
             </div>
 
             <form class="formulario-contato">
@@ -683,7 +676,7 @@
         </div>
         </section>
 
-        <section class="cta" id="contato">
+        <section class="cta">
             <div class="cta-container">
 
                 <div class="cta-texto">
@@ -850,80 +843,80 @@
     </main>
     <script>
 
-     // MENU MOBILE E OVERLAY
-const abrirMenu = document.getElementById('abrirMenu');
-const menuMobile = document.getElementById('menuMobile');
-const overlay = document.getElementById('overlay');
+        // MENU MOBILE E OVERLAY
+        const abrirMenu = document.getElementById('abrirMenu');
+        const menuMobile = document.getElementById('menuMobile');
+        const overlay = document.getElementById('overlay');
 
-if (abrirMenu && menuMobile && overlay) {
-    // BOTÃO HAMBURGUER (ABRE E FECHA)
-    abrirMenu.addEventListener('click', function () {
-        menuMobile.classList.toggle('active');
-        overlay.classList.toggle('active');
-        abrirMenu.classList.toggle('active');
-    });
+        if (abrirMenu && menuMobile && overlay) {
+            // BOTÃO HAMBURGUER (ABRE E FECHA)
+            abrirMenu.addEventListener('click', function () {
+                menuMobile.classList.toggle('active');
+                overlay.classList.toggle('active');
+                abrirMenu.classList.toggle('active');
+            });
 
-    // FECHAR AO CLICAR NO OVERLAY
-    overlay.addEventListener('click', function () {
-        menuMobile.classList.remove('active');
-        overlay.classList.remove('active');
-        abrirMenu.classList.remove('active');
-    });
+            // FECHAR AO CLICAR NO OVERLAY
+            overlay.addEventListener('click', function () {
+                menuMobile.classList.remove('active');
+                overlay.classList.remove('active');
+                abrirMenu.classList.remove('active');
+            });
 
-    // FECHAR AO CLICAR NOS LINKS E ROLAR ATÉ A SEÇÃO
-    const linksMenu = menuMobile.querySelectorAll('a');
-    linksMenu.forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
+            // FECHAR AO CLICAR NOS LINKS E ROLAR ATÉ A SEÇÃO
+            const linksMenu = menuMobile.querySelectorAll('a');
+            linksMenu.forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
 
-            // Fecha o menu
-            menuMobile.classList.remove('active');
-            overlay.classList.remove('active');
-            abrirMenu.classList.remove('active');
+                    // Fecha o menu
+                    menuMobile.classList.remove('active');
+                    overlay.classList.remove('active');
+                    abrirMenu.classList.remove('active');
 
-            // Rolagem suave se for âncora válida
-            if (href && href.startsWith('#') && href !== '#') {
-                const secao = document.querySelector(href);
-                if (secao) {
-                    e.preventDefault();
-                    secao.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-}
+                    // Rolagem suave se for âncora válida
+                    if (href && href.startsWith('#') && href !== '#') {
+                        const secao = document.querySelector(href);
+                        if (secao) {
+                            e.preventDefault();
+                            secao.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        }
 
-// SUBMENU MOBILE (SE EXISTIR)
-const dropMobile = document.querySelector('.drop-mobile > a');
-if (dropMobile) {
-    dropMobile.addEventListener('click', function (e) {
-        e.preventDefault();
-        this.parentElement.classList.toggle('active');
-    });
-}
+        // SUBMENU MOBILE (SE EXISTIR)
+        const dropMobile = document.querySelector('.drop-mobile > a');
+        if (dropMobile) {
+            dropMobile.addEventListener('click', function (e) {
+                e.preventDefault();
+                this.parentElement.classList.toggle('active');
+            });
+        }
 
-// CARROSSEL
-const zxpTrack = document.querySelector(".zxp-carousel-track");
-const zxpNextBtn = document.querySelector(".zxp-next-btn");
-const zxpPrevBtn = document.querySelector(".zxp-prev-btn");
+        // CARROSSEL
+        const zxpTrack = document.querySelector(".zxp-carousel-track");
+        const zxpNextBtn = document.querySelector(".zxp-next-btn");
+        const zxpPrevBtn = document.querySelector(".zxp-prev-btn");
 
-if (zxpNextBtn && zxpPrevBtn && zxpTrack) {
-    zxpNextBtn.addEventListener("click", function () {
-        zxpTrack.scrollBy({
-            left: 320,
-            behavior: "smooth"
-        });
-    });
+        if (zxpNextBtn && zxpPrevBtn && zxpTrack) {
+            zxpNextBtn.addEventListener("click", function () {
+                zxpTrack.scrollBy({
+                    left: 320,
+                    behavior: "smooth"
+                });
+            });
 
-    zxpPrevBtn.addEventListener("click", function () {
-        zxpTrack.scrollBy({
-            left: -320,
-            behavior: "smooth"
-        });
-    });
-}
+            zxpPrevBtn.addEventListener("click", function () {
+                zxpTrack.scrollBy({
+                    left: -320,
+                    behavior: "smooth"
+                });
+            });
+        }
 
         /*Rolagem suave*/
 
