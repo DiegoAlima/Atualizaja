@@ -4,7 +4,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /*Animação fade in*/
@@ -318,6 +318,12 @@ html {
         text-align: center;
         background-color: #161616;
     }
+
+    .info-baner {
+
+        margin-top: -60px;
+
+    }
 }
 
 .titulo .chamada {
@@ -597,6 +603,7 @@ html {
 }
 
 .em-titulo h2 {
+    text-align: center;
     margin-top: 20px;
     color: #7b2cff;
     font-family: "Poppins", sans-serif;
@@ -605,8 +612,16 @@ html {
     margin-bottom: 20px;
 }
 
+.em-titulo img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    /* Alinha o centro da imagem com o centro do texto */
+    margin: 0 1px;
 
-@media (max-width: 900px) {   
+}
+
+@media (max-width: 900px) {
     .empresas .em-titulo h2 {
         color: #fff;
     }
@@ -688,12 +703,32 @@ html {
     padding: 5px;
 }
 
-.aj-header span {
+.linha {
     font-family: "Poppins", sans-serif;
     color: #8b5cf6;
-    font-size: 13px;
-    font-weight: bolder;
+
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    /* Espaçamento entre o texto e as linhas */
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    /* Espaço entre as letras */
+    text-transform: uppercase;
+}
+
+.linha::before,
+.linha::after {
+    content: "";
+    height: 2px;
+    /* Espessura da linha */
+    width: 50px;
+    /* Comprimento fixo da linha (troque por 'flex: 1' se quiser que ocupe toda a largura) */
+    background-color: #8b5cf6;
+    /* Cor da linha */
 }
 
 .aj-header h2 {
@@ -1319,7 +1354,7 @@ html {
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: #f5f4f4;
+    background-color: #ffff;
     margin: auto;
 }
 
@@ -1384,6 +1419,7 @@ html {
     line-height: 1;
     font-size: 1em;
     color: #c2c1c1;
+    padding-bottom: 20px;
 }
 
 .detalhes-info {
@@ -1401,7 +1437,7 @@ html {
 
 .detalhes {
     width: 30%;
-    border: 1px solid rgba(255, 0, 0, 0.5);
+
     box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.5);
     border-radius: 50px;
     padding: 20px;
@@ -1411,7 +1447,7 @@ html {
 .detalhes h1,
 .futuro h1 {
     font-family: "Google Sans", sans-serif;
-    color: #d4d4d4;
+    color: #fff;
     font-weight: bolder;
     font-size: 1rem;
     margin: 1px;
@@ -1435,12 +1471,19 @@ html {
 
 .futuro {
     width: 30%;
-    border: 1px solid rgba(0, 0, 0, 0.5);
     box-shadow: inset 0 0 20px rgba(50, 127, 243, 0.5);
     border-radius: 50px;
     padding: 20px;
 }
 
+.icone-inline {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    /* Alinha o centro da imagem com o centro do texto */
+    margin: 0 5px;
+
+}
 
 .futuro div {
     padding: 20px;
@@ -1634,12 +1677,19 @@ html {
 }
 
 /*Formatação da faq*/
+.faq-form {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    width: 100%;
+    background: #F5F4F4;
+    font-family: "Poppins", sans-serif;
+}
 
 .faq {
     margin-top: 20px;
     margin-bottom: 50px;
     width: 100%;
-    background: #fff;
+    background: #Ffff;
     font-family: "Poppins", sans-serif;
 }
 
