@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /*Animação fade in*/
 .reveal {
     opacity: 0;
@@ -104,7 +108,7 @@
     z-index: 5000;
     width: 50px;
     height: 50px;
-    background: #2563eb;
+    background: #598bf7;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -259,7 +263,7 @@
     align-items: center;
     position: absolute;
     z-index: 1;
-
+    padding-top: 50px;
     margin: auto;
 
 }
@@ -309,6 +313,7 @@
         position: relative;
         height: clamp(220px, 30vw, 100vw);
         text-align: center;
+        background-color: #161616;
     }
 }
 
@@ -430,23 +435,26 @@
 
     .cabecalho {
         height: 700px;
+        padding-bottom: 50px;
         flex-direction: column;
         text-align: center;
     }
-    .baner{
+
+    .baner {
         display: none;
     }
-    .img-chamada{
-    
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        width:100%;
+
+    .img-chamada {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
-    .img-chamada img{
-        width:100%;
-        max-width:400px;
+    .img-chamada img {
+        width: 100%;
+        max-width: 400px;
     }
 
     .vantagens {
@@ -461,6 +469,7 @@
 
     .info-baner {
         width: 100%;
+        margin-top: -60px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -542,28 +551,39 @@
 
 }
 
-.baner-notebook{
-    background-color: black;
+.baner-notebook {
+    background-color: #161616;
+    border: none;
 }
-.baner-notebook img{
+
+.baner-notebook #meuVideo {
     width: 100%;
     height: 100%;
 }
+
 @media (min-width: 900px) {
-    .baner-notebook img{
+    .baner-notebook #meuVideo {
         display: none;
     }
 }
+
 
 /* Empresas que confiam em nossos serviços */
 
 .empresas {
     width: 100%;
     height: 180px;
-    background: #000000;
+    padding-bottom: 20px;
+    background: black;
     margin: auto;
     overflow: hidden;
     position: relative;
+}
+
+@media (max-width: 900px) {
+    .empresas {
+        background: #161616;
+    }
 }
 
 /* TITULO */
@@ -571,16 +591,22 @@
 .em-titulo {
     text-align: center;
     margin-bottom: 10px;
-
 }
 
 .em-titulo h2 {
     margin-top: 20px;
-    color: #8b5cf6;
+    color: #7b2cff;
     font-family: "Poppins", sans-serif;
     font-weight: bolder;
     font-size: 12px;
     margin-bottom: 20px;
+}
+
+
+@media (max-width: 900px) {   
+    .empresas .em-titulo h2 {
+        color: #fff;
+    }
 }
 
 
@@ -589,7 +615,7 @@
 .track {
     display: flex;
     align-items: center;
-    gap: 80px;
+    gap: 20px;
     margin: auto;
     width: max-content;
 
@@ -813,7 +839,114 @@
     }
 }
 
+/*Formatação da sessão de sobre nós*/
 
+.back-graund {
+    background-color: #f5f4f4;
+    width: 100%;
+    height: 100%;
+}
+
+.sobre-nos {
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 20px;
+}
+
+.sobre-nos span {
+    padding-top: 20px;
+    font-family: "Poppins", sans-serif;
+    color: #7b2cff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.sobre-nos h2 {
+    font-family: "Poppins", sans-serif;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    font-size: 1.5rem;
+    color: #111;
+}
+
+.sobre {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    gap: 0px;
+
+}
+
+.sobre .menssagem p {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.8;
+    margin-top: 10px;
+    text-align: left;
+    font-size: .9rem;
+    color: #111;
+    padding-bottom: 20px;
+    text-indent: 30px;
+
+}
+
+.sobre .menssagem {
+    width: 50%;
+}
+
+.sobre .menssagem h1 {
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+    padding-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.sobre .imagem {
+    width: 40%;
+    margin: auto;
+    padding-bottom: 50px;
+
+}
+
+.sobre .imagem .img {
+    margin: auto;
+    width: 500px;
+    height: 380px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+@media(max-width:900px) {
+
+    .sobre {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .sobre .menssagem {
+        margin: auto;
+        width: 90%;
+    }
+
+    .sobre .menssagem p {
+        text-align: justify;
+
+    }
+
+    .sobre .imagem {
+        text-align: center;
+        margin: auto;
+        padding-bottom: 20px;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .sobre .imagem .img {
+        width: 300px;
+        height: 180px;
+    }
+}
 
 /* carrrocel */
 
@@ -905,12 +1038,8 @@
     margin: 5px;
     flex: 0 0 auto;
     gap: 1px;
-    border-radius: 10px;
-
     overflow: hidden;
-
     position: relative;
-
     scroll-snap-align: center;
     margin: auto;
     text-align: center;
@@ -919,13 +1048,10 @@
 .ultra_card img {
     width: 100%;
     height: 100%;
-
     margin: auto;
     padding: 0;
     object-fit: cover;
-
     display: block;
-
     pointer-events: none;
     margin: auto;
     text-align: center;
@@ -952,7 +1078,6 @@
     visibility: visible;
     transform: translateY(0);
 }
-
 
 
 .card_info h3 {
@@ -1011,7 +1136,7 @@
 
     #ultra_slider_area {
 
-        width: 100%;
+        width: 95%;
 
     }
 
@@ -1033,6 +1158,11 @@
         max-width: 90%;
 
         height: 220px;
+    }
+
+    .ultra_card img {
+        margin: auto;
+        width: 100%;
     }
 
     #ultra_prev,
@@ -1181,13 +1311,15 @@
 
 .trabalho {
     padding-top: 20px;
+    padding-bottom: 50px;
     width: 100%;
+    height: 100%;
     text-align: center;
     background-color: #f5f4f4;
     margin: auto;
 }
 
-.trabalho .margin{
+.trabalho .margin {
     padding: 5px;
 }
 
@@ -1217,7 +1349,7 @@
 
 /* Formatação da section presença digital*/
 
-.institucional{
+.institucional {
     text-align: center;
     padding: 5px;
     margin: auto;
@@ -1226,7 +1358,7 @@
 
 }
 
-.digital{
+.digital {
     font-family: "Poppins", sans-serif;
     color: #8200ff;
     font-weight: bolder;
@@ -1234,14 +1366,14 @@
     letter-spacing: 1px;
 }
 
-.institucional h2{
-   font-family: "Poppins", sans-serif;
-    font-size:  clamp(2rem, 3vw, 2.5rem);
+.institucional h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(2rem, 3vw, 2.5rem);
     color: #fffdfd;
     margin: 10px 0;
 }
 
-.institucional p{
+.institucional p {
     margin-top: 20px;
     width: 100%;
     font-family: "Poppins", sans-serif;
@@ -1249,6 +1381,7 @@
     font-size: 1em;
     color: #c2c1c1;
 }
+
 .detalhes-info {
     width: 100%;
     height: 100%;
@@ -1258,27 +1391,29 @@
     margin: auto;
     gap: 20px;
     padding-top: 20px;
-    
+
 }
 
 .detalhes {
-    width:30%;
-    border: 1px solid  rgba(255, 0, 0, 0.5);
-     box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.5);
-     border-radius: 50px;
+    width: 30%;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.5);
+    border-radius: 50px;
     padding: 20px;
-    
-}
-.detalhes h1, .futuro h1{
-    font-family: "Poppins", sans-serif;
-    color: #fff;    
-    font-weight: lighter;
-    font-size: 1.3rem;
-    -webkit-text-stroke: 1px #c9c3c3;
 
 }
-.detalhes div{
-    border-bottom: .9px solid rgba(255, 76, 76, 0.74);
+
+.detalhes h1,
+.futuro h1 {
+    font-family: "Google Sans", sans-serif;
+    color: #d4d4d4;
+    font-weight: lighter;
+    font-size: 1rem;
+    margin: 1px;
+
+}
+
+.detalhes div {
     padding: 20px;
 }
 
@@ -1287,23 +1422,22 @@
     text-align: left;
 }
 
-.detalhes div p{
+.detalhes div p {
     font-size: .9rem;
     text-align: left;
 
 }
 
 .futuro {
-    width:30%;
-    border: 1px solid  rgba(50, 127, 243, 0.5);
-     box-shadow: inset 0 0 20px rgba(50, 127, 243, 0.5);
+    width: 30%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 20px rgba(50, 127, 243, 0.5);
     border-radius: 50px;
     padding: 20px;
 }
 
 
-.futuro div{
-    border-bottom: .9px solid rgba(50, 127, 243, 0.5);
+.futuro div {
     padding: 20px;
 }
 
@@ -1312,7 +1446,7 @@
     text-align: left;
 }
 
-.futuro div p{
+.futuro div p {
     font-size: .9rem;
     text-align: left;
 }
@@ -1320,17 +1454,19 @@
 
 @media(max-width:900px) {
     .detalhes-info {
-         flex-direction: column;
-         align-items: center;
-         margin: auto;
-         width: 100%;
-    
-    }    
-     .detalhes,
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+
+    }
+
+    .detalhes,
     .futuro {
-     width: 90%;
+        width: 90%;
     }
 }
+
 /*Formatação dos cards de trabalho*/
 
 
@@ -1396,6 +1532,99 @@
         margin-bottom: 50px;
         flex-direction: column;
 
+    }
+}
+
+/*Fumulario*/
+
+.formulario-contato {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo {
+    width: 100%;
+}
+
+.campo input {
+    width: 100%;
+    height: 55px;
+
+    padding: 0 18px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    background-color: #fff;
+
+    font-size: 16px;
+    font-family: inherit;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: 0.3s ease;
+}
+
+.campo input::placeholder {
+    color: #888;
+}
+
+.campo input:focus {
+    border-color: #8200ff;
+    box-shadow: 0 0 0 3px rgba(130, 0, 255, 0.10);
+}
+
+.formulario-contato button {
+    width: 100%;
+    height: 55px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #8200ff;
+    color: white;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.formulario-contato button:hover {
+    background-color: #7000dc;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .formulario-contato {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .campo input {
+        height: 52px;
+        font-size: 15px;
+    }
+
+    .formulario-contato button {
+        height: 52px;
+        font-size: 16px;
     }
 }
 

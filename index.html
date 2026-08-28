@@ -27,23 +27,15 @@
             <div class="menu-mobile" id="menuMobile">
 
                 <nav>
-                    <ul>
-
-                        <li><a href="#">Inicio</a></li>
-
-                        <li><a href="#">Sobre</a></li>
-
-                        <li><a href="#">Serviços</a></li>
-
-                        <li><a href="#">Portifólio</a></li>
-                        <li><a href="#">Depoimentos</a></li>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="#">Fale Conosco</a></li>
-
-
-                    </ul>
-                </nav>
-
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#portfolio">Portifólio</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
             </div>
 
             <!-- TOPO -->
@@ -147,12 +139,18 @@
                 >
             </div>
         </section>
-             <div class="baner-notebook">
-               <img src="img/baner-notebook.png">
+        <div class="baner-notebook">
+            <div class="sessao-video">
+                <!-- O id "meuVideo" será usado pelo JavaScript -->
+                <video id="meuVideo" width="100%" muted playsinline loop>
+                    <source src="img/video-info.mp4" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
             </div>
+        </div>
         <section class="empresas">
             <div class="em-titulo">
-                <h2>EMPRESAS QUE CONFIAM EM NOSSO TRABALHO</h2>
+                <h2>EMPRESAS QUE CONFIAM EM <br> NOSSO TRABALHO</h2>
             </div>
 
             <div class="carousel">
@@ -222,6 +220,52 @@
             <a href="#" class="aj-btn">
                 Ver todos os serviços <i class="bi bi-arrow-right"></i>
             </a>
+        </section>
+
+        <section class="back-graund" id="sobre">
+            <div class="sobre-nos">
+                <span>SOBRE NÓS</span>
+
+                <h2>
+                    Conheça um pouco mais do nosso proposito e valores.
+                </h2>
+
+            </div>
+            <aside class="sobre">
+                <div class="menssagem">
+                    <h1>Nosso Propósito</h1>
+
+                    <p> Nosso propósito é ajudar empresas e profissionais a apresentarem seus negócios de
+                        forma profissional, moderna e acessível na internet.
+                        Acreditamos que um bom site não deve apenas ser bonito, mas também transmitir confiança,
+                        apresentar
+                        os serviços com clareza e criar novas oportunidades para o negócio.
+
+                        Por isso, trabalhamos para transformar ideias em experiências digitais que aproximam empresas de
+                        seus clientes e ajudam seus negócios a crescer.</p>
+
+
+                    <h1>Nossa Visão</h1>
+
+
+                    <p> Queremos construir uma empresa reconhecida pela qualidade dos seus projetos, criatividade,
+                        atendimento próximo e compromisso com os resultados dos nossos clientes.
+
+                        Nossa visão é tornar a presença digital profissional mais acessível, ajudando cada vez mais
+                        empresas
+                        a saírem do básico e aproveitarem todo o potencial que a internet pode oferecer.</p>
+
+
+                </div>
+
+                <div class="imagem">
+                    <iframe class="img" src="https://www.youtube.com/embed/VHCJR6-_pmg?si=uFQlnCYmcbLO8ZCa"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+            </aside>
         </section>
 
         <section class="carrocel">
@@ -322,7 +366,7 @@
         </section>
 
 
-        <section class="depoimentos">
+        <section class="depoimentos" id="depoimentos">
 
             <div class="titulo-depoimentos">
                 <span>DEPOIMENTOS</span>
@@ -403,9 +447,9 @@
 
         <section class="trabalho">
             <div class="margin">
-            <span class="oque-fazemos"> COMO TRABALHAMOS</span>
-            <h2>Um processo simples e eficiente</h2>
-            <p>Do briefing à entrega, cuidamos de tudo para você.</p>
+                <span class="oque-fazemos"> COMO TRABALHAMOS</span>
+                <h2>Um processo simples e eficiente</h2>
+                <p>Do briefing à entrega, cuidamos de tudo para você.</p>
             </div>
             <div class="projeto">
 
@@ -452,7 +496,7 @@
             <section class="detalhes-info">
                 <div class="detalhes reveal" style="transition-delay:.1s">
 
-                    <h1><img src="img/triste.png"> Sem Site</h1>
+                    <h1>SEM NOSSOS SERVIÇOS</h1>
 
                     <div>
                         <h2> <img src="img/excluir.png"> Sem credibilidade</h2>
@@ -491,7 +535,7 @@
 
                 <div class="futuro reveal" style="transition-delay:.1s">
 
-                    <h1><img src="img/alegre.png"> Com Site</h1>
+                    <h1>COM NOSSOS SERVIÇOS</h1>
 
                     <div>
                         <h2> <img src="img/caixa-de-selecao.png"> Autoridade imediata</h2>
@@ -533,6 +577,36 @@
                 </div>
             </section>
         </section>
+        <section class="faq" id="faleconosco">
+
+            <div class="faq-titulo">
+                <span>Atendimento Personalizado</span>
+                <h2>Seu negocio merece um site com sua cara!</h2>
+                <p>Prencha os dados e receba uma consultoria gratis da sua ideia, vamos criar um design personalizado
+                    pra você ver como ficaria seu projeto na pratica, totalmente sem compromisso!.</p>
+            </div>
+
+            <form class="formulario-contato">
+
+                <div class="campo">
+                    <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                </div>
+
+                <div class="campo">
+                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="WhatsApp" required>
+                </div>
+
+                <div class="campo">
+                    <input type="email" id="email" name="email" placeholder="E-mail" required>
+                </div>
+
+                <button type="submit">Enviar</button>
+
+            </form>
+
+        </section>
+
+
 
         <div class="faq">
 
@@ -609,7 +683,7 @@
         </div>
         </section>
 
-        <section class="cta">
+        <section class="cta" id="contato">
             <div class="cta-container">
 
                 <div class="cta-texto">
@@ -775,7 +849,130 @@
         </footer>
     </main>
     <script>
-       
+
+     // MENU MOBILE E OVERLAY
+const abrirMenu = document.getElementById('abrirMenu');
+const menuMobile = document.getElementById('menuMobile');
+const overlay = document.getElementById('overlay');
+
+if (abrirMenu && menuMobile && overlay) {
+    // BOTÃO HAMBURGUER (ABRE E FECHA)
+    abrirMenu.addEventListener('click', function () {
+        menuMobile.classList.toggle('active');
+        overlay.classList.toggle('active');
+        abrirMenu.classList.toggle('active');
+    });
+
+    // FECHAR AO CLICAR NO OVERLAY
+    overlay.addEventListener('click', function () {
+        menuMobile.classList.remove('active');
+        overlay.classList.remove('active');
+        abrirMenu.classList.remove('active');
+    });
+
+    // FECHAR AO CLICAR NOS LINKS E ROLAR ATÉ A SEÇÃO
+    const linksMenu = menuMobile.querySelectorAll('a');
+    linksMenu.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+
+            // Fecha o menu
+            menuMobile.classList.remove('active');
+            overlay.classList.remove('active');
+            abrirMenu.classList.remove('active');
+
+            // Rolagem suave se for âncora válida
+            if (href && href.startsWith('#') && href !== '#') {
+                const secao = document.querySelector(href);
+                if (secao) {
+                    e.preventDefault();
+                    secao.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+}
+
+// SUBMENU MOBILE (SE EXISTIR)
+const dropMobile = document.querySelector('.drop-mobile > a');
+if (dropMobile) {
+    dropMobile.addEventListener('click', function (e) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('active');
+    });
+}
+
+// CARROSSEL
+const zxpTrack = document.querySelector(".zxp-carousel-track");
+const zxpNextBtn = document.querySelector(".zxp-next-btn");
+const zxpPrevBtn = document.querySelector(".zxp-prev-btn");
+
+if (zxpNextBtn && zxpPrevBtn && zxpTrack) {
+    zxpNextBtn.addEventListener("click", function () {
+        zxpTrack.scrollBy({
+            left: 320,
+            behavior: "smooth"
+        });
+    });
+
+    zxpPrevBtn.addEventListener("click", function () {
+        zxpTrack.scrollBy({
+            left: -320,
+            behavior: "smooth"
+        });
+    });
+}
+
+        /*Rolagem suave*/
+
+        document.querySelectorAll('.link-suave').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Impede o salto brusco padrão do HTML
+
+                const id = this.getAttribute('href'); // Pega o '#sobre'
+                const target = document.querySelector(id);
+
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+
+
+        /*Formatação do video baner*/
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Seleciona o vídeo pelo ID
+            const video = document.getElementById("meuVideo");
+
+            // Cria o observador
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Se o vídeo estiver aparecendo na tela
+                    if (entry.isIntersecting) {
+                        video.play();
+                    } else {
+                        // Opcional: Pausa o vídeo quando ele sai da tela
+                        video.pause();
+                    }
+                });
+            }, {
+                // 0.5 significa que o vídeo vai dar play quando 50% dele estiver visível
+                threshold: 0.5
+            });
+
+            // Pede ao observador para ficar de olho no vídeo
+            if (video) {
+                observer.observe(video);
+            }
+        });
+
+
         const reveals = document.querySelectorAll(".reveal");
 
         const observer = new IntersectionObserver((entries) => {
@@ -965,63 +1162,6 @@
         //menu responsivel mobile
 
 
-        const abrirMenu = document.getElementById('abrirMenu');
-        const menuMobile = document.getElementById('menuMobile');
-        const overlay = document.getElementById('overlay');
-
-        // BOTÃO HAMBURGUER (ABRE E FECHA)
-        abrirMenu.addEventListener('click', function () {
-
-            menuMobile.classList.toggle('active');
-            overlay.classList.toggle('active');
-            abrirMenu.classList.toggle('active');
-
-        });
-
-        // FECHAR AO CLICAR NO OVERLAY
-        overlay.addEventListener('click', function () {
-
-            menuMobile.classList.remove('active');
-            overlay.classList.remove('active');
-            abrirMenu.classList.remove('active');
-
-        });
-
-        // SUBMENU MOBILE
-        const dropMobile = document.querySelector('.drop-mobile > a');
-
-        dropMobile.addEventListener('click', function (e) {
-
-            e.preventDefault();
-            this.parentElement.classList.toggle('active');
-
-        });
-
-
-        const zxpTrack = document.querySelector(".zxp-carousel-track");
-
-        const zxpNextBtn = document.querySelector(".zxp-next-btn");
-        const zxpPrevBtn = document.querySelector(".zxp-prev-btn");
-
-        /* BOTÕES */
-
-        zxpNextBtn.addEventListener("click", () => {
-
-            zxpTrack.scrollBy({
-                left: 320,
-                behavior: "smooth"
-            });
-
-        });
-
-        zxpPrevBtn.addEventListener("click", () => {
-
-            zxpTrack.scrollBy({
-                left: -320,
-                behavior: "smooth"
-            });
-
-        });
     </script>
 </body>
 
