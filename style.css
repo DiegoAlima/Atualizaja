@@ -21,8 +21,8 @@ html {
 
 /*Formatação do menu*/
 .top-header {
-    background: #03020F;
-    padding: 15px 20px;
+    background: #F8FAFC;
+    padding: 10px 10px;
 }
 
 .interface {
@@ -254,7 +254,7 @@ html {
 .cabecalho {
     width: 100%;
     height: 100%;
-
+    background-color: #000000;
 
 }
 
@@ -274,12 +274,13 @@ html {
 .baner {
     width: 100%;
     background-image: url("img/baner.png");
-    height: 700px;
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    position: relative;
+    position: absolute;
     height: clamp(220px, 30vw, 800px);
+ 
 }
 
 
@@ -314,9 +315,9 @@ html {
         background-size: cover;
         display: flex;
         position: relative;
-        height: clamp(220px, 30vw, 100vw);
+        height: clamp(220px, 30vw, 800vw);
         text-align: center;
-        background-color: #161616;
+        z-index: 1;
     }
 
     .info-baner {
@@ -570,7 +571,7 @@ html {
     height: 100%;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 900px) {
     .baner-notebook #meuVideo {
         display: none;
     }
@@ -599,7 +600,8 @@ html {
 
 .em-titulo {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
+    z-index: 10;
 }
 
 .em-titulo h2 {
@@ -610,6 +612,7 @@ html {
     font-weight: bolder;
     font-size: 12px;
     margin-bottom: 20px;
+   
 }
 
 .em-titulo img {
@@ -879,112 +882,104 @@ html {
 
 /*Formatação da sessão de sobre nós*/
 
-.back-graund {
-    background-color: #f5f4f4;
-    width: 100%;
-    height: 100%;
+/* Container que centraliza tudo no meio da página */
+.container {
+  width: 100%;
+  max-width: 1200px; /* Largura máxima na tela */
+  margin: 0 auto;    /* Centraliza horizontalmente na tela */
+  padding: 0 20px;   /* Evita encostar na borda em telas menores */
+  box-sizing: border-box;
 }
 
-.sobre-nos {
-    text-align: center;
-    padding-bottom: 50px;
-    padding-top: 20px;
+.text-center {
+  text-align: center;
 }
 
-.sobre-nos span {
-    padding-top: 20px;
-    font-family: "Poppins", sans-serif;
-    color: #7b2cff;
-    font-size: 14px;
-    font-weight: 700;
+/* Seção */
+.secao-sobre {
+  padding: 80px 0;
+  background-color: #f8fafc;
 }
 
-.sobre-nos h2 {
-    font-family: "Poppins", sans-serif;
-    margin-top: 10px;
-    padding-bottom: 20px;
-    font-size: 1.5rem;
-    color: #111;
+.sobre-topo {
+  margin-bottom: 50px;
 }
 
-.sobre {
-    width: 70%;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    gap: 0px;
 
+.sobre-topo h2 {
+  font-size: 32px;
+  color: #0f172a;
 }
 
-.sobre .menssagem p {
-    font-family: "Poppins", sans-serif;
-    line-height: 1.8;
-    margin-top: 10px;
-    text-align: left;
-    font-size: .9rem;
-    color: #111;
-    padding-bottom: 20px;
-    text-indent: 30px;
-
+/* Grade com texto de um lado e vídeo do outro */
+.sobre-grade {
+  display: flex;
+  align-items: center; /* Centraliza verticalmente texto e vídeo */
+  justify-content: space-between;
+  gap: 48px;
 }
 
-.sobre .menssagem {
-    width: 50%;
+.sobre-texto {
+  flex: 1; /* Ocupa metade do espaço */
 }
 
-.sobre .menssagem h1 {
-    font-family: "Poppins", sans-serif;
-    text-align: left;
-    padding-bottom: 15px;
-    font-size: 1.3rem;
+.sobre-texto h3 {
+  font-size: 22px;
+  color: #0f172a;
+  margin: 20px 0 10px;
 }
 
-.sobre .imagem {
-    width: 40%;
-    margin: auto;
-    padding-bottom: 50px;
-
+.sobre-texto h3:first-child {
+  margin-top: 0;
 }
 
-.sobre .imagem .img {
-    margin: auto;
-    width: 500px;
-    height: 380px;
-    border-radius: 10px;
-    border: 1px solid black;
+.sobre-texto p {
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 16px;
 }
 
-@media(max-width:900px) {
-
-    .sobre {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .sobre .menssagem {
-        margin: auto;
-        width: 90%;
-    }
-
-    .sobre .menssagem p {
-        text-align: justify;
-
-    }
-
-    .sobre .imagem {
-        text-align: center;
-        margin: auto;
-        padding-bottom: 20px;
-        width: 100%;
-        height: 100%;
-
-    }
-
-    .sobre .imagem .img {
-        width: 300px;
-        height: 180px;
-    }
+/* Container do Vídeo */
+.sobre-video {
+  flex: 1; /* Ocupa a outra metade */
+  width: 100%;
 }
+
+/* Deixa o iframe 100% responsivo e com bordas arredondadas */
+.video-responsivo {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.video-responsivo iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Responsividade para Celular e Tablet */
+
+
+@media (max-width: 860px) {
+  .sobre-grade {
+    flex-direction: column; /* Empilha o texto e o vídeo */
+    gap: 32px;
+  }
+
+  .sobre-topo h2 {
+    font-size: 26px;
+  }
+}
+
 
 /* carrrocel */
 
@@ -1905,7 +1900,7 @@ html {
 .footer {
 
     width: 100%;
-    background: #030110;
+    background: #F8FAFC;
     border-top: 1px solid rgba(255, 255, 255, .08);
 
 }
@@ -1924,7 +1919,7 @@ html {
 
 .footer-col h3 {
     font-family: "Poppins", sans-serif;
-    color: #fff;
+    color: #000000;
     margin-bottom: 25px;
     font-size: 1.2rem;
     font-weight: 600;
@@ -1941,7 +1936,7 @@ html {
 
 .footer-logo p {
     font-family: "Poppins", sans-serif;
-    color: #bdbdbd;
+    color: #3f3e3edd;
     line-height: 1.8;
     font-size: .95rem;
     margin-bottom: 30px;
@@ -2007,7 +2002,7 @@ html {
 
 .footer-col ul li a {
     font-family: "Poppins", sans-serif;
-    color: #bdbdbd;
+    color: #3f3e3edd;
     text-decoration: none;
 
     transition: .3s;
@@ -2029,7 +2024,7 @@ html {
     align-items: center;
     gap: 12px;
 
-    color: #bdbdbd;
+    color: #3f3e3edd;
 
     margin-bottom: 18px;
 
