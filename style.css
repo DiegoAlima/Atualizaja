@@ -291,7 +291,7 @@ html {
     padding: 5px;
 }
 
-@media (max-width:1280px) {
+@media (max-width:1980px) {
     .titulo {
         padding: 50px 0;
         width: 60%;
@@ -302,7 +302,7 @@ html {
 
     .cabecalho {
         height: 500px;
-        background-color: black;
+        background-color: #000000;
     }
 
 
@@ -570,7 +570,7 @@ html {
     height: 100%;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1280px) {
     .baner-notebook #meuVideo {
         display: none;
     }
