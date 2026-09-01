@@ -21,7 +21,39 @@ html {
 
 /*Formatação do menu*/
 .top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    /* Estado inicial (topo da página) */
     background: #F8FAFC;
+    z-index: 100;
+    box-shadow: none;
+
+    /* Transição suave para todas as mudanças de estilo */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estado ativo (aplicado após atingir o limite de rolagem) */
+.top-header.scrolled {
+    background: rgba(236, 236, 236, 0.95);
+    backdrop-filter: blur(1px);
+    /* efeito de vidro fosco opcional */
+    padding: 5px 0;
+    /* reduz a altura do header ao rolar */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    opacity: .9;
+}
+
+@media (min-width: 900px) {
+    .top-header {
+        width: 100%;
+        background: #F8FAFC;
+        position: fixed;
+        z-index: 2;
+    }
 }
 
 .interface {
@@ -42,9 +74,10 @@ html {
 }
 
 /* MENU DESKTOP */
-.menu{
+.menu {
     margin-top: 40px;
 }
+
 .menu nav ul {
     list-style: none;
     display: flex;
@@ -69,7 +102,7 @@ html {
 .menu nav ul li:not(.no-hover) a:hover {
     color: #864eb9;
     border-bottom: 1px solid #5e00c9;
-  
+
 }
 
 .no-hover {
@@ -78,7 +111,7 @@ html {
     padding: 0px;
     border-radius: 10px;
     margin-left: 20px;
-    background: linear-gradient(135deg, #5e00c9, #725b8d); 
+    background: linear-gradient(135deg, #5e00c9, #725b8d);
 
 }
 
@@ -87,7 +120,7 @@ html {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #4f79c5;
+    background: rgba(236, 236, 236, 0.95);
     min-width: 200px;
     display: none;
     flex-direction: column;
@@ -154,7 +187,7 @@ html {
     right: -100%;
     width: 300px;
     height: 100vh;
-    background: #111827;
+    background: rgba(236, 236, 236, 0.95);
     z-index: 4000;
     transition: right .45s cubic-bezier(.77, 0, .18, 1);
     padding-top: 80px;
@@ -181,7 +214,7 @@ html {
     font-size: .8rem;
     display: block;
     padding: 18px 25px;
-    color: white;
+    color: black;
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, .08);
     transition: .3s;
@@ -189,7 +222,7 @@ html {
 
 .menu-mobile nav ul li a:hover {
     background: #ffffff;
-    color: black
+    color: rgb(121, 84, 163)
 }
 
 /* SUBMENU MOBILE */
@@ -257,10 +290,10 @@ html {
 }
 
 .cabecalho {
+    padding-top: 100px;
     width: 100%;
     height: 100%;
     background-color: #000000;
-
 }
 
 
@@ -285,7 +318,7 @@ html {
     display: flex;
     position: absolute;
     height: clamp(220px, 30vw, 800px);
- 
+
 }
 
 
@@ -605,7 +638,7 @@ html {
 
 .em-titulo {
     text-align: center;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     z-index: 10;
 }
 
@@ -617,7 +650,7 @@ html {
     font-weight: bolder;
     font-size: 12px;
     margin-bottom: 20px;
-   
+
 }
 
 .em-titulo img {
@@ -699,27 +732,29 @@ html {
     text-align: center;
     margin-bottom: 50px;
 }
-.aj-servicos .institu{
+
+.aj-servicos .institu {
     background-image: url(image/institucional.png);
     object-fit: cover;
     background-repeat: no-repeat;
     width: 100%;
 }
 
-.aj-servicos .loja{
+.aj-servicos .loja {
     background-image: url(image/lojavirtual.png);
     object-fit: cover;
     background-repeat: no-repeat;
     width: 100%;
 }
-.aj-servicos .ladingpage{
+
+.aj-servicos .ladingpage {
     background-image: url(image/ladingpage.png);
     object-fit: cover;
     background-repeat: no-repeat;
     width: 100%;
 }
 
-.aj-servicos .manutencao{
+.aj-servicos .manutencao {
     background-image: url(image/manutencao.png);
     object-fit: cover;
     background-repeat: no-repeat;
@@ -918,104 +953,112 @@ html {
 
 /* Container que centraliza tudo no meio da página */
 .container {
-  width: 100%;
-  max-width: 1200px; /* Largura máxima na tela */
-  margin: 0 auto;    /* Centraliza horizontalmente na tela */
-  padding: 0 20px;   /* Evita encostar na borda em telas menores */
-  box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px;
+    /* Largura máxima na tela */
+    margin: 0 auto;
+    /* Centraliza horizontalmente na tela */
+    padding: 0 20px;
+    /* Evita encostar na borda em telas menores */
+    box-sizing: border-box;
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 /* Seção */
 .secao-sobre {
-  padding: 80px 0;
-  background-color: #f8fafc;
+    padding: 80px 0;
+    background-color: #f8fafc;
 }
 
 .sobre-topo {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 
 .sobre-topo h2 {
-  padding-top: 20px;
-  font-family: "Poppins", sans-serif;
-  font-size: 1em;
-  color: #000000;
+    padding-top: 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    color: #000000;
 }
 
 /* Grade com texto de um lado e vídeo do outro */
 .sobre-grade {
-  display: flex;
-  align-items: center; /* Centraliza verticalmente texto e vídeo */
-  justify-content: space-between;
-  gap: 48px;
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente texto e vídeo */
+    justify-content: space-between;
+    gap: 48px;
 }
 
 .sobre-texto {
-  flex: 1; /* Ocupa metade do espaço */
+    flex: 1;
+    /* Ocupa metade do espaço */
 }
 
 .sobre-texto h3 {
-  font-size: 22px;
-  color: #0f172a;
-  margin: 20px 0 10px;
+    font-size: 22px;
+    color: #0f172a;
+    margin: 20px 0 10px;
 }
 
 .sobre-texto h3:first-child {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .sobre-texto p {
-  color: #475569;
-  font-size: 15px;
-  line-height: 1.7;
-  margin-bottom: 16px;
- font-family: "Poppins", sans-serif;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    font-family: "Poppins", sans-serif;
 
 }
 
 /* Container do Vídeo */
 .sobre-video {
-  flex: 1; /* Ocupa a outra metade */
-  width: 100%;
+    flex: 1;
+    /* Ocupa a outra metade */
+    width: 100%;
 }
 
 /* Deixa o iframe 100% responsivo e com bordas arredondadas */
 .video-responsivo {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* Proporção 16:9 */
-  height: 0;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .video-responsivo iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 /* Responsividade para Celular e Tablet */
 
 
 @media (max-width: 860px) {
-  .sobre-grade {
-    flex-direction: column; /* Empilha o texto e o vídeo */
-    gap: 32px;
-  }
+    .sobre-grade {
+        flex-direction: column;
+        /* Empilha o texto e o vídeo */
+        gap: 32px;
+    }
 
-  .sobre-topo h2 {
-    font-size: 26px;
-  }
+    .sobre-topo h2 {
+        font-size: 26px;
+    }
 }
 
 
@@ -1486,11 +1529,12 @@ html {
     font-weight: bolder;
     font-size: 1rem;
     margin: 1px;
+    padding-bottom: 20px;
 
 }
 
 .detalhes div {
-    padding: 20px;
+    padding: 5px;
 }
 
 .detalhes div h2 {
@@ -1523,7 +1567,7 @@ html {
 }
 
 .futuro div {
-    padding: 20px;
+    padding: 5px;
 }
 
 .futuro div h2 {
