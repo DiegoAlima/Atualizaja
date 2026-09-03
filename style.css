@@ -21,31 +21,32 @@ html {
 
 /*Formatação do menu*/
 .top-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 
-    /* Estado inicial (topo da página) */
-    background: #F8FAFC;
-    z-index: 100;
-    box-shadow: none;
+  /* Estado no topo: transparente e sem sombra */
+  background-color: #F8FAFC;
+  box-shadow: none;
 
-    /* Transição suave para todas as mudanças de estilo */
-    transition: all 0.3s ease-in-out;
+  /* Transição suave de movimento, fundo e sombra */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
 }
 
-/* Estado ativo (aplicado após atingir o limite de rolagem) */
-.top-header.scrolled {
-    background: rgba(236, 236, 236, 0.95);
-    backdrop-filter: blur(1px);
-    /* efeito de vidro fosco opcional */
-    padding: 5px 0;
-    /* reduz a altura do header ao rolar */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    opacity: .9;
+/* Oculta o header ao rolar para baixo */
+.top-header.header-hidden {
+  transform: translateY(-100%);
+  transition: .4s;
 }
+
+/* Fundo sólido e sombra quando não estiver no topo absoluto */
+.top-header.header-scrolled {
+  background-color: #F8FAFC; /* ou #ffffff */
+  opacity: .9;
+}
+
 
 @media (min-width: 900px) {
     .top-header {
@@ -484,7 +485,7 @@ html {
 @media (max-width:900px) {
 
     .cabecalho {
-        height: 700px;
+        height: 650px;
         padding-bottom: 50px;
         flex-direction: column;
         text-align: center;
@@ -604,11 +605,14 @@ html {
 .baner-notebook {
     background-color: #161616;
     border: none;
+   
 }
 
 .baner-notebook #meuVideo {
     width: 100%;
-    height: 100%;
+    height: 100%; 
+    border-top: .5px solid #F5F7F9;
+    border-bottom: .5px solid #F5F7F9;
 }
 
 @media (min-width: 900px) {
@@ -971,7 +975,7 @@ html {
 
 /* Seção */
 .secao-sobre {
-    padding: 80px 0;
+    padding: 25px 0;
     background-color: #f8fafc;
 }
 

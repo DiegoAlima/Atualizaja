@@ -14,7 +14,7 @@
     <main>
         <header>
             <!-- TOPO -->
-            <section class="top-header">
+            <section class="top-header" id="header">
 
                 <div class="interface">
 
@@ -849,17 +849,30 @@
     <script>
         // cola o menu no topo com rolagem suave
 
-        const header = document.querySelector('.top-header');
-        const scrollThreshold = 100; // Quantidade de pixels rolados para ativar a transição
+        const header = document.getElementById('header');
+        let lastScrollY = window.scrollY;
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > scrollThreshold) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+            const currentScrollY = window.scrollY;
 
+            // 1. Alterna entre transparente (topo) e fundo sólido (fora do topo)
+            if (currentScrollY > 10) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+
+            // 2. Controla o aparecimento (rolagem p/ cima) e ocultação (rolagem p/ baixo)
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                // Rolando para baixo: esconde
+                header.classList.add('header-hidden');
+            } else {
+                // Rolando para cima: exibe
+                header.classList.remove('header-hidden');
+            }
+
+            lastScrollY = currentScrollY;
+        });
         // MENU MOBILE E OVERLAY
         const abrirMenu = document.getElementById('abrirMenu');
         const menuMobile = document.getElementById('menuMobile');
