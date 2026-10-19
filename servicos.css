@@ -847,7 +847,7 @@ html {
 }
 
 .text-center {
-    text-align: center;
+    text-align: left;
 }
 
 /* Seção */
@@ -864,10 +864,16 @@ html {
 .sobre-topo h2 {
 
     font-family: "Poppins", sans-serif;
-    font-size: 1.4rem;
-    color: #000000;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    color: #1b1b1b;
+    font-weight: 700;
 }
 
+.sobre-topo h2 span{
+    color: #7e23c9;
+    font-weight: 800;
+}
 
 /* Grade com texto de um lado e vídeo do outro */
 .sobre-grade {
@@ -899,7 +905,106 @@ html {
     line-height: 1.7;
     margin-bottom: 16px;
     font-family: "Poppins", sans-serif;
+  
+}
+.chamada{
+    font-family: "Poppins", sans-serif;
+    margin-top: 30px;
+    text-align: left;
+    border-top: 0.5px solid #e2dfdf;
+    padding: 30px 0px;
+    color: #475569;
+    font-size: 1rem;
+    line-height: 1.5;
+    
+}
 
+/*Menssagem de autoridade*/
+
+/* Contentor principal dos indicadores */
+.stats-container {
+  display: flex;
+  width: 90%;
+  max-width: 950px;
+
+
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+/* Colunas individuais */
+.stat-item {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+/* Divisores verticais entre as colunas */
+.stat-item:not(:last-child) {
+  border-right: 1.5px solid #ccc;
+}
+
+/* Traço verde no topo de cada secção */
+.stat-accent {
+  position: absolute;
+  top: -1.5px;
+  left: 40px;
+  width: 48px;
+  height: 3px;
+  font-family: "Poppins", sans-serif;
+  border-radius: 2px;
+
+}
+
+/* Tipografia dos números em destaque */
+.stat-number {
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  color: #7e23c9;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+/* Palavra 'anos' em branco */
+.stat-number .text-white {
+    font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  text-shadow: none;
+}
+
+/* Texto descritivo inferior */
+.stat-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #7f8081;
+  letter-spacing: -0.2px;
+}
+
+/* Adaptação para ecrãs menores / telemóveis */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    padding: 0;
+    margin: auto;
+    text-align: center;
+  }
+
+  .stat-item:not(:last-child) {
+    border-right: none;
+  }
+
+  .stat-accent {
+    top: 0;
+    margin: auto;
+  }
 }
 
 /* Container do Vídeo */
@@ -911,6 +1016,7 @@ html {
 
 /* Deixa o iframe 100% responsivo e com bordas arredondadas */
 .video-responsivo {
+    margin-top: -80px;
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
@@ -919,6 +1025,14 @@ html {
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 860px) {
+    .video-responsivo {
+    margin-top: 0px;
+
+}
+
 }
 
 .video-responsivo iframe {
