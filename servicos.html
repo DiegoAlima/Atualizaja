@@ -19,7 +19,7 @@
                 <div class="interface">
 
                     <div class="logo">
-                        <a href="#">
+                        <a href="index.html">
                             <img src="image/logo-atualizaja.png" alt="logotipo">
                         </a>
                     </div>
@@ -40,10 +40,6 @@
                         <nav>
                             <ul>
                                 <li><a href="index.html">Inicio</a></li>
-                                <li><a href="index.html">Sobre</a></li>
-                                <li><a href="servicos.html">Serviços</a></li>
-                                <li><a href="index.html">Portifólio</a></li>
-                                <li><a href="index.html">Depoimentos</a></li>
                                 <li><a href="#contato">Contato</a></li>
                             </ul>
                         </nav>
@@ -55,10 +51,6 @@
                                 <ul>
 
                                     <li><a href="index.html">Inicio</a></li>
-                                    <li><a href="index.html">Sobre</a></li>
-                                    <li><a href="servicos.html">Serviços</a></li>
-                                    <li><a href="index.html">Portifólio</a></li>
-                                    <li><a href="index.html">Depoimentos</a></li>
                                     <li class="no-hover"><a style="color:#fff" ; href="#contato"><i
                                                 class="bi bi-chat-left-text"></i> Criar meu site</a></li>
 
@@ -303,18 +295,19 @@
                 <p>Conte um pouco sobre sua empresa e receba uma proposta personalizada.</p>
             </div>
 
-            <form class="formulario-contato">
+            <form class="formulario-contato" action="enviar.php" method="POST">
 
                 <div class="campo">
-                    <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                    <input type="text" name="nome" placeholder="Nome" required>
                 </div>
 
                 <div class="campo">
-                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="WhatsApp" required>
+                    <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
                 </div>
 
+
                 <div class="campo">
-                    <select id="tipo-projeto" name="tipo-projeto" required>
+                    <select name="tipo-projeto" required>
                         <option value="" disabled selected>Tipo de projeto</option>
                         <option value="Site institucional">Site institucional</option>
                         <option value="Landing page">Landing page</option>
@@ -325,8 +318,7 @@
                 </div>
 
                 <div class="campo">
-                    <textarea id="negocio" name="negocio" placeholder="Conte um pouco sobre seu negócio"
-                        rows="4"></textarea>
+                    <textarea name="negocio" placeholder="Conte um pouco sobre seu negócio" rows="4"></textarea>
                 </div>
 
                 <button type="submit">Quero receber uma proposta</button>
@@ -356,7 +348,7 @@
                         <i class="bi bi-whatsapp"></i>
                     </a>
 
-                    <a href="#" class="btn-portfolio">
+                    <a href="index.html" class="btn-portfolio">
                         Ver portfólio
                         <i class="bi bi-eye"></i>
                     </a>
@@ -410,17 +402,8 @@
 
                     <ul>
 
-                        <li><a href="#">Início</a></li>
+                        <li><a href="index.html">Início</a></li>
 
-                        <li><a href="#">Serviços</a></li>
-
-                        <li><a href="#">Portfólio</a></li>
-
-                        <li><a href="#">Sobre</a></li>
-
-                        <li><a href="#">Depoimentos</a></li>
-
-                        <li><a href="#">Contato</a></li>
 
                     </ul>
 
