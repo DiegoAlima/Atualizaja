@@ -21,30 +21,31 @@ html {
 
 /*Formatação do menu*/
 .top-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 
-  /* Estado no topo: transparente e sem sombra */
-  background-color: #F8FAFC;
-  box-shadow: none;
+    /* Estado no topo: transparente e sem sombra */
+    background-color: #F8FAFC;
+    box-shadow: none;
 
-  /* Transição suave de movimento, fundo e sombra */
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+    /* Transição suave de movimento, fundo e sombra */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
 }
 
 /* Oculta o header ao rolar para baixo */
 .top-header.header-hidden {
-  transform: translateY(-100%);
-  transition: .4s;
+    transform: translateY(-100%);
+    transition: .4s;
 }
 
 /* Fundo sólido e sombra quando não estiver no topo absoluto */
 .top-header.header-scrolled {
-  background-color: #F8FAFC; /* ou #ffffff */
-  opacity: 1;
+    background-color: #F8FAFC;
+    /* ou #ffffff */
+    opacity: 1;
 }
 
 
@@ -295,7 +296,7 @@ html {
     height: 180px;
     background: #0B0B0F;
     margin: auto;
-  
+
 }
 
 /* TITULO */
@@ -371,6 +372,7 @@ html {
     /* Espaço entre as letras */
     text-transform: uppercase;
 }
+
 .linha-branca::before,
 .linha-branca::after {
     content: "";
@@ -475,10 +477,16 @@ html {
 }
 
 .aj-container {
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
-       background: #08090c;
+    background: #08090c;
 
+}
+
+@media (max-width: 768px) {
+    .aj-container {
+        width: 90%;
+    }
 }
 
 /* Cabeçalho */
@@ -823,6 +831,7 @@ html {
 /* Respeita preferência por menos animações */
 
 @media (prefers-reduced-motion: reduce) {
+
     .aj-card,
     .aj-botao {
         transition: none;
@@ -839,11 +848,9 @@ html {
 /* Container que centraliza tudo no meio da página */
 .container {
     width: 100%;
-    max-width: 1200px;
     /* Largura máxima na tela */
     margin: 0 auto;
     /* Centraliza horizontalmente na tela */
-    padding: 0 20px;
     /* Evita encostar na borda em telas menores */
     box-sizing: border-box;
 }
@@ -854,9 +861,17 @@ html {
 
 /* Seção */
 .secao-sobre {
+    width: 70%;
+    margin: auto;
     margin-top: 90px;
     padding: 40px 0;
-   
+
+}
+
+@media (max-width: 768px) {
+    .secao-sobre {
+        width: 90%;
+    }
 }
 
 .sobre-topo h2 {
@@ -868,7 +883,7 @@ html {
     margin-bottom: 40px;
 }
 
-.sobre-topo h2 span{
+.sobre-topo h2 span {
     color: #7e23c9;
     font-weight: 800;
 }
@@ -903,9 +918,10 @@ html {
     line-height: 1.7;
     margin-bottom: 16px;
     font-family: "Poppins", sans-serif;
-  
+
 }
-.chamada{
+
+.chamada {
     font-family: "Poppins", sans-serif;
     margin-top: 30px;
     text-align: left;
@@ -914,95 +930,101 @@ html {
     color: #475569;
     font-size: 1rem;
     line-height: 1.5;
-    
+
 }
 
 /*Menssagem de autoridade*/
 
 /* Contentor principal dos indicadores */
 .stats-container {
-  display: flex;
-  width: 90%;
-  max-width: 950px;
-
-
-  border-radius: 20px;
-  box-sizing: border-box;
-  margin: auto;
+    display: flex;
+    width: 100%;
+    max-width: 950px;
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 
 /* Colunas individuais */
 .stat-item {
-  flex: 1;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 10px;
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px;
+    text-align: center;
 }
 
 /* Divisores verticais entre as colunas */
 .stat-item:not(:last-child) {
-  border-right: 1.5px solid #ccc;
+    border-right: 1.5px solid #ccc;
 }
 
 /* Traço verde no topo de cada secção */
 .stat-accent {
-  position: absolute;
-  top: -1.5px;
-  left: 40px;
-  width: 48px;
-  height: 3px;
-  font-family: "Poppins", sans-serif;
-  border-radius: 2px;
+    position: absolute;
+    top: -1.5px;
+    left: 20px;
+    width: 48px;
+    height: 3px;
+    font-family: "Poppins", sans-serif;
+    border-radius: 2px;
 
 }
 
 /* Tipografia dos números em destaque */
 .stat-number {
-  font-size: 1.5rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  color: #7e23c9;
-  text-align: center;
-  line-height: 1.1;
-  letter-spacing: -1px;
-  margin-bottom: 12px;
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    color: #7e23c9;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
 }
 
 /* Palavra 'anos' em branco */
 .stat-number .text-white {
     font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  text-shadow: none;
+    font-weight: 800;
+    text-shadow: none;
 }
 
 /* Texto descritivo inferior */
 .stat-label {
-  font-family: "Poppins", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #7f8081;
-  letter-spacing: -0.2px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #7f8081;
+    letter-spacing: -0.2px;
+    text-align: left;
 }
 
 /* Adaptação para ecrãs menores / telemóveis */
 @media (max-width: 768px) {
-  .stats-container {
-    flex-direction: column;
-    padding: 0;
-    margin: auto;
-    text-align: center;
-  }
+    .stat-label {
+        font-family: "Poppins", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #7f8081;
+        letter-spacing: -0.2px;
+        text-align: left;
+    }
 
-  .stat-item:not(:last-child) {
-    border-right: none;
-  }
+    .stats-container {
+        padding: 0px;
+        margin: auto;
+        text-align: center;
+    }
 
-  .stat-accent {
-    top: 0;
-    margin: auto;
-  }
+    .stat-item:not(:last-child) {
+        padding: 5px;
+    }
+
+    .stat-accent {
+        top: 0;
+        margin: auto;
+    }
 }
 
 /* Container do Vídeo */
@@ -1027,9 +1049,9 @@ html {
 
 @media (max-width: 860px) {
     .video-responsivo {
-    margin-top: 0px;
+        margin-top: 0px;
 
-}
+    }
 
 }
 
@@ -1061,13 +1083,23 @@ html {
 
 
 /* Galeria de projetos */
+.galeria-sessao {
+    width: 100%;
+    background-color: #F8FAFC;
+}
 
 .galeria {
-    width: 100%;
-    max-width: 1400px;
+    width: 70%;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 10px 0px;
     box-sizing: border-box;
+
+}
+
+@media (max-width: 768px) {
+    .galeria {
+        width: 90%;
+    }
 }
 
 .galeria-grid {
@@ -1167,15 +1199,16 @@ html {
 }
 
 /*Detalhes do serviço*/
-.detalhe{
+.detalhe {
     padding: 0;
     margin: 0;
     width: 100%;
     background-color: #F8FAFC;
 }
-.conversao{
-    width: 90%;
-    max-width: 1200px;
+
+.conversao {
+    width: 70%;
+    max-width: 1500px;
     margin: 0 auto;
 
     display: grid;
@@ -1189,7 +1222,7 @@ html {
 
 /* SEÇÃO DE PROJETOS - ATUALIZA JÁ */
 
-.aj-projeto{
+.aj-projeto {
     width: 100%;
     min-width: 0;
     max-width: 100%;
@@ -1197,17 +1230,13 @@ html {
     box-sizing: border-box;
     color: #ffffff;
     background:
-        radial-gradient(
-            ellipse at 100% 0%,
+        radial-gradient(ellipse at 100% 0%,
             rgba(100, 35, 255, 0.24),
-            transparent 40%
-        ),
-        linear-gradient(
-            145deg,
+            transparent 40%),
+        linear-gradient(145deg,
             #100b2e 0%,
             #080923 58%,
-            #160747 100%
-        );
+            #160747 100%);
 
     border-radius: 18px;
     font-family: 'Poppins', sans-serif;
@@ -1226,11 +1255,9 @@ html {
     right: -115px;
 
     border-radius: 50%;
-    background: linear-gradient(
-        135deg,
-        rgba(107, 31, 255, 0.30),
-        rgba(67, 24, 155, 0.04)
-    );
+    background: linear-gradient(135deg,
+            rgba(107, 31, 255, 0.30),
+            rgba(67, 24, 155, 0.04));
     border: 1px solid rgba(156, 93, 255, 0.08);
 }
 
@@ -1317,11 +1344,9 @@ html {
     height: 46px;
 
     color: #ffffff;
-    background: linear-gradient(
-        145deg,
-        #712aff,
-        #4515d5
-    );
+    background: linear-gradient(145deg,
+            #712aff,
+            #4515d5);
 
     border-radius: 13px;
     box-shadow: 0 5px 18px rgba(83, 28, 224, 0.20);
@@ -1481,25 +1506,27 @@ html {
         font-size: 9px;
     }
 }
+
 /*Fumulario*/
-.faq-form{
-     box-shadow: 0 5px 20px hsla(0, 1%, 83%, 0.979);
-     border-radius: 20px;
+.faq-form {
+    box-shadow: 0 5px 20px hsla(0, 1%, 83%, 0.979);
+    border-radius: 20px;
 }
 
 .faq-titulo h1 {
     font-family: "Poppins", sans-serif;
 }
 
-.faq-titulo span{
-    color:#7b2cff;
+.faq-titulo span {
+    color: #7b2cff;
 }
 
-.faq-titulo p{
+.faq-titulo p {
     font-family: "Poppins", sans-serif;
-    margin: 20px  0  20px;
+    margin: 20px 0 20px;
     text-align: left;
 }
+
 .formulario-contato {
     width: 100%;
     max-width: 100%;
@@ -1517,7 +1544,99 @@ html {
     width: 100%;
 }
 
+/*Perguntas e respostas FAQ*/
 
+
+.faq {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 78%;
+    background: #Ffff;
+    font-family: "Poppins", sans-serif;
+    margin: auto;
+}
+
+@media (max-width: 860px) {
+    .faq {
+        width: 100%;
+    }
+
+}
+
+.faq-titulo-faq {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 3px;
+}
+
+.faq-titulo-faq h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111;
+    margin: 10px 0;
+}
+
+.faq-titulo-faq p {
+    color: #666;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 90%;
+    margin: auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+    text-align: center;
+}
+
+.faq-pergunta {
+    width: 100%;
+    background: #fff;
+    border: none;
+    padding: 22px 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    transition: .3s;
+}
+
+.faq-pergunta:hover {
+    background: #f8f3ff;
+}
+
+.faq-pergunta span {
+    font-size: 28px;
+    color: #7b2cff;
+    transition: .3s;
+}
+
+.faq-item.active .faq-pergunta span {
+    transform: rotate(45deg);
+}
+
+.faq-resposta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: #fafafa;
+}
+
+.faq-resposta p {
+    padding: 0 30px 25px;
+    color: #666;
+    line-height: 1.8;
+}
 
 .formulario-contato input,
 .formulario-contato select,
@@ -1534,7 +1653,7 @@ html {
     font-size: 16px;
     outline: none;
     transition: border-color 0.3s ease,
-                box-shadow 0.3s ease;
+        box-shadow 0.3s ease;
 }
 
 .formulario-contato input,
@@ -1570,7 +1689,7 @@ html {
 
 .formulario-contato button {
     width: 100%;
-    min-height: 55px;
+    height: 100%;
     padding: 14px 20px;
     border: none;
     border-radius: 10px;
@@ -1581,7 +1700,7 @@ html {
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s ease,
-                transform 0.3s ease;
+        transform 0.3s ease;
 }
 
 .formulario-contato button:hover {
@@ -1625,12 +1744,12 @@ html {
     }
 
     .campo input {
-        height: 52px;
+        height: 100%;
         font-size: 15px;
     }
 
     .formulario-contato button {
-        height: 52px;
+        height: 100%;
         font-size: 16px;
     }
 }
@@ -2020,8 +2139,8 @@ html {
 }
 
 /* Os dois cards dividem o espaço igualmente */
-.detalhe .conversao > .aj-projeto,
-.detalhe .conversao > .faq-form {
+.detalhe .conversao>.aj-projeto,
+.detalhe .conversao>.faq-form {
     flex: 1 1 0;
     width: 0;
     min-width: 0;
@@ -2095,8 +2214,8 @@ html {
         gap: 20px;
     }
 
-    .detalhe .conversao > .aj-projeto,
-    .detalhe .conversao > .faq-form {
+    .detalhe .conversao>.aj-projeto,
+    .detalhe .conversao>.faq-form {
         flex: 0 0 auto;
         width: 100%;
         max-width: 100%;

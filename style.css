@@ -844,7 +844,7 @@ html {
     font-weight: 700;
 }
 
-.aj-titulo h2 {
+.aj-titulo h2{
     font-family: "Poppins", sans-serif;
     margin-top: 10px;
     font-size: 1.4rem;
@@ -944,29 +944,12 @@ html {
     .aj-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .aj-titulo h2 {
-        font-size: 27px;
-    }
 }
 
 @media(max-width: 900px) {
 
     .aj-grid {
         grid-template-columns: 1fr;
-    }
-
-    .aj-titulo {
-        margin: auto;
-        max-width: 380px;
-    }
-
-    .aj-titulo h2 {
-        font-size: 28px;
-    }
-
-    .aj-titulo p {
-        font-size: 12px;
     }
 }
 
@@ -1671,9 +1654,6 @@ html {
     text-align: left;
 }
 
-
-
-
 @media(max-width:900px) {
 
     .projeto {
@@ -1686,147 +1666,12 @@ html {
     }
 }
 
-/*Fumulario*/
-
-.formulario-contato {
-    width: 50%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.formulario-contato .campo {
-    width: 100%;
-}
-
-.formulario-contato input,
-.formulario-contato select,
-.formulario-contato textarea {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 16px 18px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: #fff;
-    color: #222;
-    font-family: inherit;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s ease,
-                box-shadow 0.3s ease;
-}
-
-.formulario-contato input,
-.formulario-contato select {
-    height: 55px;
-}
-
-.formulario-contato textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.formulario-contato input::placeholder,
-.formulario-contato textarea::placeholder {
-    color: #888;
-    opacity: 1;
-}
-
-.formulario-contato select:invalid {
-    color: #888;
-}
-
-.formulario-contato input:focus,
-.formulario-contato select:focus,
-.formulario-contato textarea:focus {
-    border-color: #8200ff;
-    box-shadow: 0 0 0 3px rgba(130, 0, 255, 0.10);
-}
-
-.formulario-contato button {
-    width: 100%;
-    min-height: 55px;
-    padding: 14px 20px;
-    border: none;
-    border-radius: 10px;
-    background: #7B2CFF;
-    color: #fff;
-    font-family: inherit;
-    font-size: 17px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease,
-                transform 0.3s ease;
-}
-
-.formulario-contato button:hover {
-    transform: translateY(-2px);
-    transition: .1s;
-}
-
-@media (max-width: 600px) {
-    .formulario-contato {
-        max-width: 100%;
-        gap: 12px;
-    }
-
-    .formulario-contato input,
-    .formulario-contato select,
-    .formulario-contato textarea {
-        font-size: 16px;
-    }
-
-    .formulario-contato input,
-    .formulario-contato select {
-        height: 52px;
-    }
-
-    .formulario-contato button {
-        min-height: 52px;
-    }
-}
-
-
-/* =========================
-   RESPONSIVIDADE
-   ========================= */
-
-@media (max-width: 600px) {
-
-    .formulario-contato {
-        width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
-    }
-
-    .campo input {
-        height: 52px;
-        font-size: 15px;
-    }
-
-    .formulario-contato button {
-        height: 52px;
-        font-size: 16px;
-    }
-}
-
 /*Formatação da faq*/
-.faq-form {
-    padding-top: 20px;
-    padding-bottom: 50px;
-    width: 100%;
-    background: #F5F4F4;
-    font-family: "Poppins", sans-serif;
-}
 
 .faq {
     margin-top: 20px;
-    margin-bottom: 50px;
     width: 100%;
-    background: #Ffff;
+    background: #F8FAFC;
     font-family: "Poppins", sans-serif;
 }
 
