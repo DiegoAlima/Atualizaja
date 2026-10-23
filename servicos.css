@@ -509,7 +509,7 @@ html {
 
 .aj-cabecalho h2 span {
     display: block;
-    color: #8b5cf6;
+    color: #7b2cff;
 }
 
 .aj-cabecalho p {
@@ -1062,7 +1062,7 @@ html {
 
 /* Galeria de projetos */
 
-.aj-galeria {
+.galeria {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
@@ -1070,14 +1070,14 @@ html {
     box-sizing: border-box;
 }
 
-.aj-galeria-grid {
+.galeria-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
 }
 
 /* Cards */
-.aj-projeto {
+.projeto {
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -1088,13 +1088,13 @@ html {
     transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.aj-projeto:hover {
+.projeto:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 22px #ccc;
 }
 
 /* Imagens */
-.aj-projeto-img {
+.projeto-img {
     display: block;
     width: 100%;
     height: 100%;
@@ -1103,7 +1103,7 @@ html {
 }
 
 /* Conteúdo */
-.aj-projeto-conteudo {
+.projeto-conteudo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1111,13 +1111,13 @@ html {
     padding: 18px;
 }
 
-.aj-projeto-conteudo h3 {
+.projeto-conteudo h3 {
     margin: 0 0 10px;
     color: #222;
     font-size: 18px;
 }
 
-.aj-projeto-conteudo p {
+.projeto-conteudo p {
     margin: 0 0 20px;
     color: #666;
     font-size: 14px;
@@ -1144,7 +1144,7 @@ html {
 
 /* Tablets e notebooks menores */
 @media (max-width: 1000px) {
-    .aj-galeria-grid {
+    .galeria-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 22px;
     }
@@ -1152,36 +1152,372 @@ html {
 
 /* Celulares */
 @media (max-width: 560px) {
-    .aj-galeria {
+    .galeria {
         padding: 20px 14px;
     }
 
-    .aj-galeria-grid {
+    .galeria-grid {
         grid-template-columns: 1fr;
         gap: 24px;
     }
 
-    .aj-projeto-img {
+    .projeto-img {
         height: 100%;
     }
 }
 
-
-
-/*Fumulario*/
-
-.formulario-contato {
-    width: 50%;
-    max-width: 600px;
+/*Detalhes do serviço*/
+.detalhe{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #F8FAFC;
+}
+.conversao{
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+
+    box-sizing: border-box;
+}
+
+
+
+/* SEÇÃO DE PROJETOS - ATUALIZA JÁ */
+
+.aj-projeto{
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+    background:
+        radial-gradient(
+            ellipse at 100% 0%,
+            rgba(100, 35, 255, 0.24),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #100b2e 0%,
+            #080923 58%,
+            #160747 100%
+        );
+
+    border-radius: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Formas decorativas do fundo */
+
+.aj-projeto::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 240px;
+    height: 240px;
+    top: -145px;
+    right: -115px;
+
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        rgba(107, 31, 255, 0.30),
+        rgba(67, 24, 155, 0.04)
+    );
+    border: 1px solid rgba(156, 93, 255, 0.08);
+}
+
+.aj-projeto::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 230px;
+    height: 230px;
+    bottom: -175px;
+    left: -125px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(126, 44, 255, 0.22);
+    box-shadow: 0 0 0 35px rgba(111, 31, 255, 0.025);
+}
+
+/* Conteúdo */
+
+.aj-projeto-conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+}
+
+.aj-projeto-etiqueta {
+    display: inline-block;
+
+
+    color: #ffffff;
+    background: linear-gradient(90deg, #4514d8, #3811a8);
+
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+}
+
+.aj-projeto h2 {
+    margin: 15px 0 12px;
+
+    color: #ffffff;
+    font-size: clamp(25px, 3vw, 31px);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.8px;
+}
+
+.aj-projeto h2 span {
+    color: #7b2cff;
+}
+
+.aj-projeto-intro {
+    margin: 0 0 24px;
+
+    color: #d4d5e8;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.55;
+}
+
+/* Lista de serviços */
+
+.aj-servicos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.aj-servico-item {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: start;
+    gap: 21px;
+}
+
+.aj-servico-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    color: #ffffff;
+    background: linear-gradient(
+        145deg,
+        #712aff,
+        #4515d5
+    );
+
+    border-radius: 13px;
+    box-shadow: 0 5px 18px rgba(83, 28, 224, 0.20);
+}
+
+.aj-servico-icone i {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.aj-servico-texto h3 {
+    margin: 2px 0 4px;
+
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.aj-servico-texto p {
+    margin: 0;
+
+    color: #d7d9ed;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.55;
+}
+
+/* Benefícios */
+
+.aj-projeto-beneficios {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr 0.9fr;
+    gap: 12px;
+
+    margin-top: 27px;
+    padding-top: 2px;
+}
+
+.aj-beneficio {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: 0;
+}
+
+.aj-beneficio-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 19px;
+    width: 19px;
+    height: 19px;
+
+    color: #ffffff;
+    background: linear-gradient(135deg, #923dff, #5d20ed);
+    border-radius: 50%;
+}
+
+.aj-beneficio-check i {
+    font-size: 13px;
+}
+
+.aj-beneficio p {
+    margin: 1px 0 0;
+
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.aj-beneficio small {
+    display: block;
+    margin-top: 2px;
+
+    color: #d0d1e5;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+/* Tablet */
+
+@media (min-width: 600px) {
+    .aj-projeto {
+        padding: 45px 40px 30px;
+    }
+
+    .aj-projeto-intro {
+        max-width: 500px;
+        font-size: 14px;
+    }
+
+    .aj-servico-item {
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .aj-servico-icone {
+        width: 52px;
+        height: 52px;
+    }
+
+    .aj-servico-texto h3 {
+        font-size: 15px;
+    }
+
+    .aj-servico-texto p {
+        font-size: 13px;
+    }
+
+    .aj-servicos-lista {
+        gap: 23px;
+    }
+
+    .aj-projeto-beneficios {
+        margin-top: 32px;
+    }
+}
+
+/* Celulares estreitos */
+
+@media (max-width: 380px) {
+    .aj-projeto {
+        padding: 28px 20px 22px;
+        border-radius: 14px;
+    }
+
+    .aj-projeto h2 {
+        font-size: 24px;
+    }
+
+    .aj-servico-item {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 13px;
+    }
+
+    .aj-servico-icone {
+        width: 42px;
+        height: 42px;
+        border-radius: 11px;
+    }
+
+    .aj-servico-icone i {
+        font-size: 19px;
+    }
+
+    .aj-projeto-beneficios {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px 8px;
+    }
+
+    .aj-beneficio p,
+    .aj-beneficio small {
+        font-size: 9px;
+    }
+}
+/*Fumulario*/
+.faq-form{
+     box-shadow: 0 5px 20px hsla(0, 1%, 83%, 0.979);
+     border-radius: 20px;
+}
+
+.faq-titulo h1 {
+    font-family: "Poppins", sans-serif;
+}
+
+.faq-titulo span{
+    color:#7b2cff;
+}
+
+.faq-titulo p{
+    font-family: "Poppins", sans-serif;
+    margin: 20px  0  20px;
+    text-align: left;
+}
+.formulario-contato {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    box-sizing: border-box;
 }
 
 .formulario-contato .campo {
     width: 100%;
 }
+
+
 
 .formulario-contato input,
 .formulario-contato select,
@@ -1214,11 +1550,15 @@ html {
 .formulario-contato input::placeholder,
 .formulario-contato textarea::placeholder {
     color: #888;
+    font-size: 0.8rem;
     opacity: 1;
+    font-family: "Poppins", sans-serif;
 }
 
 .formulario-contato select:invalid {
     color: #888;
+    font-size: 0.8rem;
+    font-family: "Poppins", sans-serif;
 }
 
 .formulario-contato input:focus,
@@ -1234,9 +1574,9 @@ html {
     padding: 14px 20px;
     border: none;
     border-radius: 10px;
-    background: #7B2CFF;
+    background: #7b2cff;
     color: #fff;
-    font-family: inherit;
+    font-family: "Poppins", sans-serif;
     font-size: 17px;
     font-weight: 600;
     cursor: pointer;
@@ -1295,103 +1635,7 @@ html {
     }
 }
 
-/*Formatação da faq*/
-.faq-form {
-    padding-top: 20px;
-    padding-bottom: 50px;
-    width: 100%;
-    background: #F5F4F4;
-    font-family: "Poppins", sans-serif;
-}
 
-.faq {
-    margin-top: 20px;
-    margin-bottom: 50px;
-    width: 100%;
-    background: #Ffff;
-    font-family: "Poppins", sans-serif;
-}
-
-.faq-titulo {
-    text-align: center;
-    margin-bottom: 50px;
-    padding: 3px;
-}
-
-.faq-titulo span {
-    color: #7b2cff;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.faq-titulo h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #111;
-    margin: 10px 0;
-}
-
-.faq-titulo p {
-    color: #666;
-    max-width: 600px;
-    margin: auto;
-}
-
-.faq-container {
-    max-width: 90%;
-    margin: auto;
-}
-
-.faq-item {
-    margin-bottom: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
-    text-align: center;
-}
-
-.faq-pergunta {
-    width: 100%;
-    background: #fff;
-    border: none;
-    padding: 22px 30px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    font-size: 18px;
-    font-weight: 600;
-    color: #222;
-    transition: .3s;
-}
-
-.faq-pergunta:hover {
-    background: #f8f3ff;
-}
-
-.faq-pergunta span {
-    font-size: 28px;
-    color: #7b2cff;
-    transition: .3s;
-}
-
-.faq-item.active .faq-pergunta span {
-    transform: rotate(45deg);
-}
-
-.faq-resposta {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    background: #fafafa;
-}
-
-.faq-resposta p {
-    padding: 0 30px 25px;
-    color: #666;
-    line-height: 1.8;
-}
 
 
 /*Campanha de menssagem*/
@@ -1742,4 +1986,130 @@ html {
 
     }
 
+}
+
+
+/* CORREÇÃO DEFINITIVA DO LAYOUT */
+
+.detalhe,
+.detalhe *,
+.detalhe *::before,
+.detalhe *::after {
+    box-sizing: border-box;
+}
+
+.detalhe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 30px 0;
+    overflow-x: clip;
+}
+
+.detalhe .conversao {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+
+    width: 90%;
+    max-width: 1200px;
+    min-width: 0;
+    margin: 0 auto;
+}
+
+/* Os dois cards dividem o espaço igualmente */
+.detalhe .conversao > .aj-projeto,
+.detalhe .conversao > .faq-form {
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+}
+
+/* Card roxo */
+.detalhe .aj-projeto {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 35px 28px;
+}
+
+/* Conteúdo interno do card roxo */
+.detalhe .aj-projeto-conteudo,
+.detalhe .aj-servico-item,
+.detalhe .aj-servico-texto {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.detalhe .aj-servico-item {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 15px;
+}
+
+.detalhe .aj-projeto-beneficios {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+/* Card do formulário */
+.detalhe .faq-form {
+    padding: 30px 28px;
+    overflow-wrap: anywhere;
+}
+
+.detalhe .formulario-contato {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+.detalhe .formulario-contato .campo {
+    width: 100%;
+    min-width: 0;
+}
+
+.detalhe .formulario-contato input,
+.detalhe .formulario-contato select,
+.detalhe .formulario-contato textarea,
+.detalhe .formulario-contato button {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Tablets e celulares */
+@media (max-width: 768px) {
+    .detalhe .conversao {
+        display: flex;
+        flex-direction: column;
+        width: 92%;
+        gap: 20px;
+    }
+
+    .detalhe .conversao > .aj-projeto,
+    .detalhe .conversao > .faq-form {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .detalhe .aj-projeto,
+    .detalhe .faq-form {
+        padding: 28px 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .detalhe .aj-projeto-beneficios {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
