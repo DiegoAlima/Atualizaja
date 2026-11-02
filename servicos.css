@@ -328,60 +328,24 @@ html {
 }
 
 .linha {
+    margin-top: 20px;
+    margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
-    color: #7b2cff;
-
+    color: #8b5cf6;
+    border: 0.2px solid #ece8e8;
+    border-radius: 10px;
+    padding: 10px;
     letter-spacing: 1px;
-    display: flex;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     gap: 16px;
     /* Espaçamento entre o texto e as linhas */
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
     letter-spacing: 2px;
     /* Espaço entre as letras */
     text-transform: uppercase;
-    padding: 20px 20px;
-}
-
-.linha::before,
-.linha::after {
-    content: "";
-    height: 2px;
-    /* Espessura da linha */
-    width: 50px;
-    /* Comprimento fixo da linha (troque por 'flex: 1' se quiser que ocupe toda a largura) */
-    background-color: #8b5cf6;
-    /* Cor da linha */
-}
-
-.linha-branca {
-    font-family: "Poppins", sans-serif;
-    color: #ffff;
-
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    /* Espaçamento entre o texto e as linhas */
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    /* Espaço entre as letras */
-    text-transform: uppercase;
-}
-
-.linha-branca::before,
-.linha-branca::after {
-    content: "";
-    height: 2px;
-    /* Espessura da linha */
-    width: 50px;
-    /* Comprimento fixo da linha (troque por 'flex: 1' se quiser que ocupe toda a largura) */
-    background-color: #ffff;
-    /* Cor da linha */
 }
 
 
@@ -464,7 +428,9 @@ html {
     width: 100%;
     margin: auto;
     padding: 40px 0px;
-    background: #0B0B0F;
+    background-image: url(img/fundo.png);
+     background-size: cover;
+     background-position: center;
     color: var(--aj-texto);
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
@@ -479,7 +445,6 @@ html {
 .aj-container {
     width: 70%;
     margin: 0 auto;
-    background: #0B0B0F;
 
 }
 

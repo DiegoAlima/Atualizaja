@@ -293,7 +293,8 @@ html {
     padding-bottom: 20px;
     width: 100%;
     height: 100%;
-    background-color: #0B0B0F;
+    background-color: #05012A;
+    
 }
 
 .conteudo{
@@ -354,7 +355,7 @@ html {
 
     .cabecalho {
         height: 500px;
-        background-color: #0B0B0F;
+     
     }
 
 
@@ -379,7 +380,7 @@ html {
 }
 
 .titulo .chamada {
-    color: #b55aff;
+    color: #9b58d1;
     font-size: 10pt;
     font-weight: 500;
     text-align: center;
@@ -471,7 +472,7 @@ html {
     padding: 5px;
     display: flex;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 30px;
     color: white;
     background-color: black;
@@ -573,7 +574,7 @@ html {
     }
 
     .titulo h1 span {
-        color: #5e00c9;
+        color: #7B2CFF;
         font-size: 2rem;
         font-weight: bolder;
     }
@@ -628,7 +629,7 @@ html {
     width: 100%;
     height: 180px;
     padding-bottom: 20px;
-    background: #0B0B0F;
+    background-color: #05012A;
     margin: auto;
     overflow: hidden;
     position: relative;
@@ -644,12 +645,16 @@ html {
 
 .em-titulo h2 {
     text-align: center;
+    display: inline-block;
     margin-top: 20px;
-    color: #b55aff;
+    color: #fff;
     font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 11px;
     margin-bottom: 20px;
+    border: 0.2px solid #ece8e8;
+    border-radius: 10px;
+    padding:10px;
 
 }
 
@@ -663,31 +668,24 @@ html {
 }
 
 .linha {
+    margin-top: 20px;
+    margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
     color: #8b5cf6;
-    padding-top: 30px;
+    border: 0.2px solid #ece8e8;
+    border-radius: 10px;
+    padding:10px;
     letter-spacing: 1px;
-    display: flex;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     gap: 16px;
     /* Espaçamento entre o texto e as linhas */
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
     letter-spacing: 2px;
     /* Espaço entre as letras */
     text-transform: uppercase;
-}
-
-.linha::before,
-.linha::after {
-    content: "";
-    height: 2px;
-    /* Espessura da linha */
-    width: 50px;
-    /* Comprimento fixo da linha (troque por 'flex: 1' se quiser que ocupe toda a largura) */
-    background-color: #8b5cf6;
-    /* Cor da linha */
 }
 
 .linha-branca {
@@ -848,12 +846,6 @@ html {
 
 
 /* TÍTULO */
-.aj-titulo span {
-    font-family: "Poppins", sans-serif;
-    color: #7b2cff;
-    font-size: 14px;
-    font-weight: 700;
-}
 
 .aj-titulo h2{
     font-family: "Poppins", sans-serif;
@@ -878,7 +870,7 @@ html {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 15px;
 }
 
 /* CARD */
@@ -888,7 +880,8 @@ html {
     box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
     border-radius: 10px;
     text-align: center;
-    padding: 30px 0;
+    padding: 10px 0;
+    margin: 5px;
     transition: .3s;
 }
 
@@ -924,6 +917,7 @@ html {
 
 .aj-card p {
     font-family: "Poppins", sans-serif;
+    padding: 10px;
     color: #fff;
     line-height: 1.6;
 }
@@ -976,6 +970,7 @@ html {
 @media(max-width:900px) {
     .container{
     margin: auto;
+    text-align: center;
     width: 90%;
 }
 }
@@ -1032,7 +1027,7 @@ html {
     line-height: 1.7;
     margin-bottom: 16px;
     font-family: "Poppins", sans-serif;
-
+    text-align: left;
 }
 
 /* Container do Vídeo */
@@ -1082,7 +1077,9 @@ html {
 /* carrrocel */
 
 .carrocel {
-    background: #0B0B0F;
+     background-image: url(img/fundo.png);
+     background-size: cover;
+     background-position: center;
 }
 
 
@@ -1110,9 +1107,6 @@ html {
     position: relative;
 
     overflow: hidden;
-
-
-    background: #0B0B0F;
 
 }
 
@@ -1341,13 +1335,6 @@ html {
 
 }
 
-.titulo-depoimentos span {
-    color: #8200ff;
-    font-weight: 700;
-    font-size: .9rem;
-    letter-spacing: 1px;
-}
-
 .titulo-depoimentos h1 {
     font-size: 1.5rem;
     font-weight: 600;
@@ -1456,13 +1443,6 @@ html {
     padding: 5px;
 }
 
-.oque-fazemos {
-    font-family: "Poppins", sans-serif;
-    color: #8200ff;
-    font-weight: bolder;
-    font-size: .9rem;
-    letter-spacing: 1px;
-}
 
 .trabalho h1 {
     font-family: "Poppins", sans-serif;
@@ -1486,17 +1466,13 @@ html {
     width: 100%;
     text-align: center;
     margin: auto;
-    background: #0B0B0F;
+     background-image: url(img/fundo.png);
+     background-size: cover;
+     background-position: center;
 
 
 }
 
-.digital {
-    font-family: "Poppins", sans-serif;
-    font-weight: bolder;
-    font-size: .9rem;
-    letter-spacing: 1px;
-}
 
 .institucional h1 {
     font-family: "Poppins", sans-serif;
@@ -1703,13 +1679,6 @@ html {
     text-align: center;
     margin-bottom: 50px;
     padding: 3px;
-}
-
-.faq-titulo span {
-    color: #7b2cff;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
 }
 
 .faq-titulo h1 {
