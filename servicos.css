@@ -290,12 +290,15 @@ html {
 
 /* Empresas que confiam em nossos serviços */
 
+
 .empresas {
-    padding-top: 100px;
     width: 100%;
-    height: 180px;
-    background: #0B0B0F;
-    margin: auto;
+    clear: both;
+    margin: 110px auto 0;
+    background-color: #eff1f3;
+    overflow: hidden;
+    position: relative;
+    background-color: #eff1f3;
 
 }
 
@@ -309,13 +312,11 @@ html {
 
 .em-titulo h2 {
     text-align: center;
-    margin-top: 20px;
-    color: #7b2cff;
+    margin: 20px;
+    color: #b55aff;
     font-family: "Poppins", sans-serif;
-    font-weight: bolder;
+    font-weight: 600;
     font-size: 12px;
-    margin-bottom: 20px;
-
 }
 
 .em-titulo img {
@@ -327,8 +328,75 @@ html {
 
 }
 
+
+/* TRACK */
+
+.track {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+    width: max-content;
+    padding-bottom: 10px;
+    animation: scroll 50s linear infinite;
+}
+
+/* LOGOS */
+
+.track img {
+    width: 100px;
+
+    border-radius: 10px;
+    opacity: 0.7;
+    border: none;
+    transition: 0.4s;
+    filter: grayscale(100%);
+}
+
+.track img:hover {
+
+
+    filter: grayscale(0%);
+
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+    .empresas {
+        width: 100%;
+        clear: both;
+        margin: 88px auto 0;
+        background-color: #eff1f3;
+        overflow: hidden;
+        position: relative;
+        background-color: #eff1f3;
+
+    }
+
+    .em-titulo h2 {
+        padding-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .track {
+        width: 90%;
+        height: 70px;
+        margin: auto;
+
+    }
+
+    .track img {
+        margin: auto;
+        width: 50px;
+
+    }
+
+}
+
 .linha {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
     color: #8b5cf6;
@@ -348,71 +416,6 @@ html {
     text-transform: uppercase;
 }
 
-
-
-@media (max-width: 900px) {
-    .empresas .em-titulo h2 {
-        color: #fff;
-    }
-}
-
-
-/* TRACK */
-
-.track {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin: auto;
-    width: max-content;
-
-    animation: scroll 50s linear infinite;
-}
-
-/* LOGOS */
-
-.track img {
-    width: 100px;
-    border-radius: 10px;
-    opacity: 0.7;
-    border: none;
-    transition: 0.4s;
-
-    filter: grayscale(100%);
-}
-
-.track img:hover {
-
-
-    filter: grayscale(0%);
-
-}
-
-
-/* RESPONSIVO */
-
-@media (max-width: 900px) {
-
-    .em-titulo h2 {
-        padding-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .track {
-        gap: 10px;
-        height: 100%;
-    }
-
-    .track img {
-        width: 50px;
-        height: 50px;
-    }
-
-}
-
-
-/* Servicos prestados formatação */
-
 /* ================================
    ATUALIZA JÁ — SERVIÇOS
 ================================ */
@@ -428,9 +431,9 @@ html {
     width: 100%;
     margin: auto;
     padding: 40px 0px;
-    background-image: url(img/fundo.png);
-     background-size: cover;
-     background-position: center;
+    background-image: url("img/empresa.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     color: var(--aj-texto);
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
@@ -651,23 +654,16 @@ html {
     padding: 10px 13px;
     border: 1px solid transparent;
     border-radius: 8px;
-    background: #5E00C9;
+    background: linear-gradient(135deg, #5e00c9, #725b8d);
     color: #fff;
     text-align: center;
     text-decoration: none;
     font-size: 12px;
     font-weight: 600;
     line-height: 1.4;
-    transition:
-        background 0.2s ease,
-        box-shadow 0.2s ease;
 }
 
-.aj-botao:hover {
-    background: #5E00C9;
-    color: #fff;
 
-}
 
 .aj-botao i {
     font-size: 14px;
@@ -841,7 +837,6 @@ html {
 .secao-sobre {
     width: 70%;
     margin: auto;
-    margin-top: 90px;
     padding: 40px 0;
 
 }
@@ -1008,29 +1003,23 @@ html {
 /* Container do Vídeo */
 .sobre-video {
     flex: 1;
-    /* Ocupa a outra metade */
     width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 0;
+    margin-top: 0;
 }
 
-/* Deixa o iframe 100% responsivo e com bordas arredondadas */
 .video-responsivo {
-    margin-top: -80px;
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
-    /* Proporção 16:9 */
     height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 860px) {
-    .video-responsivo {
-        margin-top: 0px;
-
-    }
-
 }
 
 .video-responsivo iframe {
@@ -1122,34 +1111,33 @@ html {
 }
 
 .projeto-conteudo h3 {
+    font-family: "Poppins", sans-serif;
     margin: 0 0 10px;
     color: #222;
-    font-size: 18px;
+    font-size: 1.2rem
 }
 
 .projeto-conteudo p {
+    font-family: "Poppins", sans-serif;
     margin: 0 0 20px;
     color: #666;
-    font-size: 14px;
+    font-size: 0.9rem;
     line-height: 1.6;
 }
 
 /* Botão */
 .aj-btn-site {
+    font-family: "Poppins", sans-serif;
     display: inline-block;
     margin-top: auto;
     padding: 10px 20px;
     border-radius: 8px;
-    background: #8200ff;
+    background: linear-gradient(135deg, #5e00c9, #725b8d);
     color: #fff;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
     transition: background .3s ease;
-}
-
-.aj-btn-site:hover {
-    background: #6500cc;
 }
 
 /* Tablets e notebooks menores */
@@ -1671,7 +1659,7 @@ html {
     padding: 14px 20px;
     border: none;
     border-radius: 10px;
-    background: #7b2cff;
+    background: linear-gradient(135deg, #43028d, #975bdb);
     color: #fff;
     font-family: "Poppins", sans-serif;
     font-size: 17px;
@@ -1743,7 +1731,9 @@ html {
 .cta {
     padding: 50px 0;
     width: 100%;
-    background: #0B0B0F;
+    background-image: url("img/empresa.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
@@ -1809,7 +1799,7 @@ html {
 
 .btn-orcamento {
 
-    background: #7B2CFF;
+    background: linear-gradient(135deg, #43028d, #975bdb);
     color: #fff;
 
 }
