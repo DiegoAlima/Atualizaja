@@ -893,7 +893,6 @@ html {
     font-family: "Poppins", sans-serif;
 
 }
-
 .chamada {
     font-family: "Poppins", sans-serif;
     margin-top: 30px;
@@ -912,9 +911,7 @@ html {
 .stats-container {
     display: flex;
     width: 100%;
-    max-width: 950px;
-    box-sizing: border-box;
-    border-radius: 10px;
+    margin: auto;
 }
 
 /* Colunas individuais */
@@ -923,8 +920,8 @@ html {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin: 10px;
+    align-items:center;
+    margin: auto;
     text-align: center;
 }
 
@@ -947,9 +944,9 @@ html {
 
 /* Tipografia dos números em destaque */
 .stat-number {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: "Poppins", sans-serif;
-    font-weight: 900;
+    font-weight: 700;
     color: #7e23c9;
     line-height: 1.1;
     letter-spacing: -1px;
@@ -959,7 +956,7 @@ html {
 /* Palavra 'anos' em branco */
 .stat-number .text-white {
     font-family: "Poppins", sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     text-shadow: none;
 }
 
@@ -981,7 +978,7 @@ html {
         font-weight: 700;
         color: #7f8081;
         letter-spacing: -0.2px;
-        text-align: left;
+        text-align: center;
     }
 
     .stats-container {
