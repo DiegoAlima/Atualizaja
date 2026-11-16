@@ -194,7 +194,7 @@
                                 <!-- Item 1 -->
                                 <div class="stat-item">
                                     <div class="stat-accent"></div>
-                                    <div class="stat-number"> 7 Dias</div>
+                                    <div class="stat-number"><span class="count" data-target="7">0</span> Dias</div>
                                     <div class="stat-label">Para entrega</div>
                                 </div>
 
@@ -202,7 +202,8 @@
                                 <div class="stat-item">
                                     <div class="stat-accent"></div>
                                     <div class="stat-number">
-                                        4 <span class="text-white">Anos</span>
+                                        <span class="count" data-target="4">0</span> <span
+                                            class="text-white">Anos</span>
                                     </div>
                                     <div class="stat-label">De mercado</div>
                                 </div>
@@ -210,7 +211,7 @@
                                 <!-- Item 3 -->
                                 <div class="stat-item">
                                     <div class="stat-accent"></div>
-                                    <div class="stat-number">+ <br>30</div>
+                                    <div class="stat-number">+ <br><span class="count" data-target="30">0</span></div>
                                     <div class="stat-label">Segmentos atendidos</div>
                                 </div>
                             </div>
@@ -711,18 +712,17 @@
             </div>
         </section>
 
-           <!-- WHATSAPP FLUTUANTE - ATUALIZA JÁ -->
-                <a href="https://wa.me/5531985747203?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20os%20servi%C3%A7os%20da%20Atualiza%20J%C3%A1."
-                    class="aj-whatsapp" target="_blank" rel="noopener noreferrer"
-                    aria-label="Fale conosco pelo WhatsApp">
+        <!-- WHATSAPP FLUTUANTE - ATUALIZA JÁ -->
+        <a href="https://wa.me/5531985747203?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20os%20servi%C3%A7os%20da%20Atualiza%20J%C3%A1."
+            class="aj-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
 
-                    <i class="bi bi-whatsapp"></i>
+            <i class="bi bi-whatsapp"></i>
 
-                    <span class="aj-whatsapp-tooltip">
-                        Fale conosco pelo WhatsApp
-                    </span>
+            <span class="aj-whatsapp-tooltip">
+                Fale conosco pelo WhatsApp
+            </span>
 
-                </a>
+        </a>
 
         <footer class="footer">
 
@@ -860,6 +860,56 @@
         </footer>
     </main>
     <script>
+
+        // Animação de autoridade com Java script
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.querySelector(".stats-container");
+            const counters = document.querySelectorAll(".stats-container .count");
+            const duration = 4000; // Duração em milissegundos (1.2s)
+
+            if (!container || !counters.length) return;
+
+            const animateCounters = () => {
+                const startTime = performance.now();
+
+                const update = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easeOut = 1 - Math.pow(1 - progress, 2);
+
+                    counters.forEach((counter) => {
+                        const target = Number(counter.getAttribute("data-target"));
+                        counter.textContent = Math.floor(easeOut * target);
+                    });
+
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        counters.forEach((counter) => {
+                            counter.textContent = counter.getAttribute("data-target");
+                        });
+                    }
+                };
+
+                requestAnimationFrame(update);
+            };
+
+            const observer = new IntersectionObserver(
+                (entries, obs) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            animateCounters();
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.4 }
+            );
+
+            observer.observe(container);
+        });
+
         // cola o menu no topo com rolagem suave
 
         const header = document.getElementById('header');

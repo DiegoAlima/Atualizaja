@@ -1068,7 +1068,6 @@ html {
     font-weight: 700;
     color: #fff;
     line-height: 1.1;
-    letter-spacing: -1px;
     margin-bottom: 12px;
     text-align: center;
     letter-spacing: 1px;
@@ -1078,8 +1077,9 @@ html {
     width: 50px;
     height: 50px;
     margin: auto;
-       
+    font-variant-numeric: tabular-nums;
 }
+
 
 /* Palavra 'anos' em branco */
 .stat-number .text-white {
