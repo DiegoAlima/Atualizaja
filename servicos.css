@@ -396,11 +396,11 @@ html {
 }
 
 .linha {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
     color: #8b5cf6;
-    border: 0.2px solid #ece8e8;
+    border: 1px solid #c5c3c3;
     border-radius: 10px;
     padding: 10px;
     letter-spacing: 1px;
@@ -912,8 +912,10 @@ html {
 .stats-container {
     display: flex;
     width: 90%;
+    padding: 10px;
     text-align: left;
     margin: left;
+
 }
 
 /* Colunas individuais */
@@ -923,6 +925,7 @@ html {
     display: flex;
     flex-direction: column;
     text-align: center;
+    
 
 }
 
@@ -948,11 +951,19 @@ html {
     font-size: 1.2rem;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    color: #7e23c9;
+    color: #fff;
     line-height: 1.1;
     letter-spacing: -1px;
     margin-bottom: 12px;
     text-align: center;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #5e00c9, #725b8d);
+    border-radius: 100px;
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+       
 }
 
 /* Palavra 'anos' em branco */
@@ -960,16 +971,18 @@ html {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     text-shadow: none;
+    
 }
 
 /* Texto descritivo inferior */
 .stat-label {
     font-family: "Poppins", sans-serif;
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 700;
     color: #7f8081;
     letter-spacing: -0.2px;
     text-align: center;
+    margin-top: 20px;
 
 }
 
@@ -1002,6 +1015,7 @@ html {
         margin: auto;
     }
 }
+
 /* Container do Vídeo */
 .sobre-video {
     flex: 1;
@@ -1851,6 +1865,128 @@ html {
         justify-content: center;
         width: 83%;
 
+    }
+
+}
+
+
+
+/* ==================================
+   WHATSAPP FLUTUANTE - ATUALIZA JÁ
+================================== */
+
+.aj-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 62px;
+    height: 62px;
+
+    background: #25D366;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+    text-decoration: none;
+
+    border-radius: 50%;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, .35);
+
+    z-index: 99999;
+
+    transition: all .3s ease;
+}
+
+/* ÍCONE */
+.aj-whatsapp i {
+    position: relative;
+    z-index: 2;
+}
+
+/* PULSAÇÃO */
+.aj-whatsapp::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+    background: #25D366;
+
+    animation: aj-pulse 2s infinite;
+    z-index: 1;
+}
+
+/* HOVER */
+.aj-whatsapp:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: #20bd5a;
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(37, 211, 102, .45);
+}
+
+/* TOOLTIP */
+.aj-whatsapp-tooltip {
+    position: absolute;
+    right: 75px;
+
+    background: #080132;
+    color: #fff;
+
+    padding: 12px 18px;
+    border-radius: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(10px);
+    transition: all .3s ease;
+}
+
+/* TOOLTIP HOVER */
+.aj-whatsapp:hover .aj-whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* ANIMAÇÃO */
+@keyframes aj-pulse {
+    0% {
+        transform: scale(1);
+        opacity: .45;
+    }
+
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .aj-whatsapp {
+        width: 56px;
+        height: 56px;
+
+        right: 18px;
+        bottom: 18px;
+
+        font-size: 29px;
+    }
+
+    .aj-whatsapp-tooltip {
+        display: none;
     }
 
 }
