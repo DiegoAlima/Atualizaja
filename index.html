@@ -853,13 +853,83 @@
 
                 </p>
 
-                <a href="#">Política de Privacidade</a>
+                <!-- Seu botão atual no rodapé (adicione o id="open-privacy") -->
+                <button type="button" id="open-privacy" class="btn-privacy">
+                    Políticas de Privacidade
+                </button>
 
+                <!-- Estrutura do Lightbox (Modal) -->
+                <div id="privacy-modal" class="modal-overlay" aria-hidden="true">
+                    <div class="modal-box" role="dialog" aria-labelledby="modal-title">
+                        <div class="modal-header">
+                            <h2 id="modal-title">Políticas de Privacidade</h2>
+                            <button type="button" id="close-privacy" class="modal-close"
+                                aria-label="Fechar">&times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                            <p><strong>1. Coleta de Informações</strong><br>
+                                Coletamos apenas os dados fornecidos voluntariamente por você através dos nossos
+                                formulários de contato (como nome, e-mail e telefone) com o único objetivo de responder
+                                às suas solicitações de orçamento e atendimento.</p>
+
+                            <p><strong>2. Uso dos Dados</strong><br>
+                                As informações coletadas são utilizadas exclusivamente para comunicação comercial direta
+                                e prestação dos serviços contratados. Não vendemos, alugamos ou compartilhamos seus
+                                dados com terceiros.</p>
+
+                            <p><strong>3. Segurança</strong><br>
+                                Adotamos práticas adequadas de segurança para proteger suas informações contra acesso
+                                não autorizado, alteração ou divulgação.</p>
+
+                            <p><strong>4. Seus Direitos (LGPD)</strong><br>
+                                Você pode solicitar a atualização ou exclusão dos seus dados de nossa base a qualquer
+                                momento entrando em contato pelos nossos canais oficiais.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </footer>
     </main>
     <script>
+        // Efeito Box caixa de texto
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const openBtn = document.getElementById("open-privacy");
+            const closeBtn = document.getElementById("close-privacy");
+            const modal = document.getElementById("privacy-modal");
+
+            if (!openBtn || !modal) return;
+
+            const openModal = (e) => {
+                e.preventDefault(); // Evita pular para o topo caso seu botão seja uma tag <a>
+                modal.classList.add("active");
+                modal.setAttribute("aria-hidden", "false");
+                document.body.style.overflow = "hidden"; // Trava a rolagem do site ao fundo
+            };
+
+            const closeModal = () => {
+                modal.classList.remove("active");
+                modal.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = ""; // Libera a rolagem do site
+            };
+
+            openBtn.addEventListener("click", openModal);
+            closeBtn.addEventListener("click", closeModal);
+
+            // Fechar clicando fora da caixa (no fundo escuro)
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            // Fechar pressionando a tecla ESC
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && modal.classList.contains("active")) {
+                    closeModal();
+                }
+            });
+        });
 
         // Animação de autoridade com Java script
 

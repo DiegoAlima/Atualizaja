@@ -1041,7 +1041,6 @@ html {
     flex-direction: column;
     text-align: center;
     
-
 }
 
 /* Divisores verticais entre as colunas */
@@ -2121,6 +2120,7 @@ html {
 }
 
 /* ANIMAÇÃO */
+
 @keyframes aj-pulse {
     0% {
         transform: scale(1);
@@ -2134,6 +2134,7 @@ html {
 }
 
 /* MOBILE */
+
 @media (max-width: 768px) {
 
     .aj-whatsapp {
@@ -2152,6 +2153,112 @@ html {
 
 }
 
+/* Fundo escuro embaçado atrás do Lightbox */
+.btn-privacy{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #5e00c9, #725b8d);
+    color: #fff;
+}
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(59, 59, 59, 0.8);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+  
+  /* Escondido por padrão com transição suave */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Classe ativada via JS */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Caixa de conteúdo */
+.modal-box {
+  background: #14141c;
+  color: #e4e4e7;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(15px) scale(0.98);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-box {
+  transform: translateY(0) scale(1);
+}
+
+/* Cabeçalho do modal */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #a1a1aa;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #8200ff;
+}
+
+/* Corpo com barra de rolagem interna */
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d4d4d8;
+}
+
+.modal-body p {
+  font-family: "Poppins", sans-serif;  
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.modal-body strong {
+  color: #ffffff;
+}
+
+/* Estilização opcional da barra de rolagem */
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-body::-webkit-scrollbar-thumb {
+  background: #8200ff;
+  border-radius: 4px;
+}
 
 /*Formatação do rodape*/
 .footer {
