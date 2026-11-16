@@ -1999,6 +1999,7 @@ html {
     border: none;
     background: linear-gradient(135deg, #5e00c9, #725b8d);
     color: #fff;
+    cursor:pointer;
 }
 .modal-overlay {
   position: fixed;
