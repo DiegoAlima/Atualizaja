@@ -744,7 +744,6 @@ html {
 
 }
 
-
 .linha-branca {
     font-family: "Poppins", sans-serif;
     color: #ffff;
@@ -862,9 +861,9 @@ html {
     margin-top: 150px;
     margin: auto;
     border-radius: 50%;
-
-    background: #dbdadd;
-    border: 1px solid #8301ee;
+    margin-bottom: 20px;
+    background: #080129;
+    border: 1px solid #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -875,7 +874,7 @@ html {
 /* TEXTOS */
 .aj-card h3 {
     font-family: "Poppins", sans-serif;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
     color: #fff;
@@ -900,7 +899,7 @@ html {
     font-family: "Poppins", sans-serif;
     color: #fff;
     line-height: 1.6;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     padding: 10px;
 }
 
@@ -1028,8 +1027,9 @@ html {
 /* Contentor principal dos indicadores */
 .stats-container {
     display: flex;
-    width: 100%;
-    margin: auto;
+    width: 90%;
+    text-align: left;
+    margin: left;
 }
 
 /* Colunas individuais */
@@ -1038,9 +1038,8 @@ html {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items:center;
-    margin: auto;
     text-align: center;
+
 }
 
 /* Divisores verticais entre as colunas */
@@ -1069,6 +1068,7 @@ html {
     line-height: 1.1;
     letter-spacing: -1px;
     margin-bottom: 12px;
+    text-align: center;
 }
 
 /* Palavra 'anos' em branco */
@@ -1085,11 +1085,18 @@ html {
     font-weight: 700;
     color: #7f8081;
     letter-spacing: -0.2px;
-    text-align: left;
+    text-align: center;
+
 }
 
 /* Adaptação para ecrãs menores / telemóveis */
 @media (max-width: 768px) {
+    .stats-container {
+        display: flex;
+        width: 90%;
+        margin: auto;
+    }
+
     .stat-label {
         font-family: "Poppins", sans-serif;
         font-size: 0.7rem;
@@ -1105,9 +1112,6 @@ html {
         text-align: center;
     }
 
-    .stat-item:not(:last-child) {
-        padding: 5px;
-    }
 
     .stat-accent {
         top: 0;
@@ -1537,43 +1541,6 @@ html {
     }
 }
 
-.trabalho {
-    padding-bottom: 50px;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background-color: #ffff;
-    margin: auto;
-}
-
-.trabalho .margin {
-    padding: 5px;
-}
-
-.oque-fazemos {
-    font-family: "Poppins", sans-serif;
-    color: #8200ff;
-    font-weight: bolder;
-    font-size: .9rem;
-    letter-spacing: 1px;
-}
-
-.trabalho h1 {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.5em;
-    color: #111;
-    margin: 10px 0;
-}
-
-.trabalho p {
-    margin-top: 20px;
-    width: 100%;
-    font-family: "Poppins", sans-serif;
-    line-height: 1;
-    font-size: 1em;
-    color: #666;
-}
-
 /* Formatação da section presença digital*/
 
 .institucional {
@@ -1716,6 +1683,42 @@ html {
 
 /*Formatação dos cards de trabalho*/
 
+.trabalho {
+    padding-bottom: 50px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #F8FAFC;
+    margin: auto;
+}
+
+.trabalho .margin {
+    padding: 5px;
+}
+
+.oque-fazemos {
+    font-family: "Poppins", sans-serif;
+    color: #8200ff;
+    font-weight: bolder;
+    font-size: .9rem;
+    letter-spacing: 1px;
+}
+
+.trabalho h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5em;
+    color: #111;
+    margin: 10px 0;
+}
+
+.trabalho p {
+    margin-top: 20px;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+    font-size: 1em;
+    color: #666;
+}
 
 .projeto {
     width: 100%;
@@ -1740,6 +1743,7 @@ html {
     box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
     margin: 5px;
     border-radius: 10px;
+    background-color: #fff;
 }
 
 

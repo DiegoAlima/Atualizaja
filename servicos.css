@@ -488,7 +488,7 @@ html {
     color: #222222;
     font-family: "Poppins", sans-serif;
     margin: 0 0 16px;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     line-height: 1.2;
     font-weight: 700;
     letter-spacing: -1px;
@@ -849,7 +849,7 @@ html {
 
 .sobre-topo h2 {
     font-family: "Poppins", sans-serif;
-    font-size: 2rem;
+    font-size: 2.1rem;
     line-height: 1.2;
     color: #1b1b1b;
     font-weight: 700;
@@ -905,13 +905,15 @@ html {
 
 }
 
+
 /*Menssagem de autoridade*/
 
 /* Contentor principal dos indicadores */
 .stats-container {
     display: flex;
-    width: 100%;
-    margin: auto;
+    width: 90%;
+    text-align: left;
+    margin: left;
 }
 
 /* Colunas individuais */
@@ -920,9 +922,8 @@ html {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items:center;
-    margin: auto;
     text-align: center;
+
 }
 
 /* Divisores verticais entre as colunas */
@@ -951,6 +952,7 @@ html {
     line-height: 1.1;
     letter-spacing: -1px;
     margin-bottom: 12px;
+    text-align: center;
 }
 
 /* Palavra 'anos' em branco */
@@ -967,11 +969,18 @@ html {
     font-weight: 700;
     color: #7f8081;
     letter-spacing: -0.2px;
-    text-align: left;
+    text-align: center;
+
 }
 
 /* Adaptação para ecrãs menores / telemóveis */
 @media (max-width: 768px) {
+    .stats-container {
+        display: flex;
+        width: 90%;
+        margin: auto;
+    }
+
     .stat-label {
         font-family: "Poppins", sans-serif;
         font-size: 0.7rem;
@@ -987,16 +996,12 @@ html {
         text-align: center;
     }
 
-    .stat-item:not(:last-child) {
-        padding: 5px;
-    }
 
     .stat-accent {
         top: 0;
         margin: auto;
     }
 }
-
 /* Container do Vídeo */
 .sobre-video {
     flex: 1;
