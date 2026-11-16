@@ -1261,7 +1261,7 @@ html {
 /* CARD */
 .ultra_card {
     margin-top: 30px;
-    min-width: 250px;
+    width: 500px;
     height: 250px;
     margin: 5px;
     flex: 0 0 auto;
@@ -1275,7 +1275,7 @@ html {
 }
 
 .ultra_card img {
-    width: 100%;
+    width: 500px;
     height: 100%;
     margin: auto;
     padding: 0;
@@ -1304,7 +1304,7 @@ html {
 }
 
 .ultra_card:hover .card_info {
-    opacity: .8;
+    opacity: .9;
     visibility: visible;
     transform: translateY(0);
 }
@@ -1379,7 +1379,7 @@ html {
 
     #ultra_slider_area {
 
-        width: 95%;
+        width: 100%;
 
     }
 
@@ -1398,7 +1398,7 @@ html {
 
     .ultra_card {
 
-        max-width: 90%;
+        width: 350px;
 
         height: 220px;
     }
