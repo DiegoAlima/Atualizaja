@@ -7,16 +7,61 @@ html {
     scroll-behavior: smooth;
 }
 
-/*Animação fade in*/
-.reveal {
-    opacity: 0;
-    transform: translateY(50px) scale(0.98);
-    transition: opacity .8s ease, transform .8s ease;
+/* Fade In somente no mobile e tablets */
+@media (max-width: 900px) {
+
+    .fade-mobile {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-mobile.ativo {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+@media (max-width: 2900px) {
+
+    /* Surge da esquerda para a direita */
+    .fade-esquerda {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    /* Surge da direita para a esquerda */
+    .fade-direita {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    /* Estado final das animações */
+    .fade-esquerda.ativo,
+    .fade-direita.ativo {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .titulo-animado {
+        opacity: 0;
+        transform: translateY(25px);
+        transition: opacity 0.8s ease,
+                    transform 0.8s ease;
+    }
+
+    .titulo-animado.ativo {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
 /*Formatação do menu*/
@@ -288,6 +333,7 @@ html {
 
 }
 
+
 .cabecalho {
     padding-top: 100px;
     padding-bottom: 80px;
@@ -413,7 +459,6 @@ html {
     color: #fff;
 }
 
-
 /*Formatação dos botões do cabecalho*/
 
 .venda {
@@ -502,7 +547,7 @@ html {
 @media (max-width:900px) {
 
     .cabecalho {
-        height: 650px;
+        height: 750px;
         padding-bottom: 50px;
         flex-direction: column;
         text-align: center;
@@ -565,7 +610,7 @@ html {
     .titulo h1 {
         margin-top: 15px;
         width: 100%;
-        font-size: 1.7rem;
+        font-size: 2.5rem;
         font-weight: bolder;
         font-family: "Poppins", sans-serif;
         line-height: 0.9;
@@ -583,7 +628,7 @@ html {
         margin-top: 20px;
         width: 100%;
         font-family: "Poppins", sans-serif;
-        line-height: 1;
+        line-height: 1.5;
         font-size: 0.8em;
         color: #fff;
     }
@@ -743,6 +788,20 @@ html {
 
 }
 
+@media (max-width: 900px) {
+    .linha{
+        padding-bottom: 20px;
+        text-align: left;
+        display: block;
+        width: fit-content;
+    }
+
+    .alinhamento{
+        text-align: left;
+    }
+}
+
+
 .linha-branca {
     font-family: "Poppins", sans-serif;
     color: #ffff;
@@ -785,6 +844,7 @@ html {
 
 
 .aj-titulo {
+    padding-top: 10px;
     margin: auto;
 
 }
@@ -959,17 +1019,18 @@ html {
 /* Seção */
 .secao-sobre {
     position: relative;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 
 }
 
 .sobre-topo {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 
 .sobre-topo h2 {
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
     font-family: "Poppins", sans-serif;
     font-size: 1.4rem;
     color: #000000;
@@ -1540,13 +1601,17 @@ html {
 
 
 @media(max-width:900px) {
+    .cards-depoimentos{
+        width: 90%;
+        margin: auto;
+    }
     .titulo-depoimentos {
         text-align: center;
         margin-bottom: 30px;
     }
 
     .depoimentos {
-        width: 90%;
+        width: 100%;
         text-align: center;
         margin: auto;
     }
@@ -1556,6 +1621,7 @@ html {
 
 .institucional {
     width: 100%;
+    padding-top: 10px;
     text-align: center;
     margin: auto;
     background-image: url("img/empresa.png");
@@ -1563,14 +1629,6 @@ html {
     background-size: cover;
 
 
-}
-
-.digital {
-    font-family: "Poppins", sans-serif;
-    font-weight: bolder;
-    font-size: .9rem;
-    letter-spacing: 1px;
-    z-index: 100;
 }
 
 .institucional h1 {
