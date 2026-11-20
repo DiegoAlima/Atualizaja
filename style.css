@@ -620,7 +620,7 @@ html {
 
     .titulo h1 span {
         color: #5e00c9;
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: bolder;
     }
 
@@ -768,10 +768,10 @@ html {
 
 .linha {
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-family: "Poppins", sans-serif;
     color: #8b5cf6;
-    border: 1px solid #cecbcb;
+    border: 0.1px solid #8b5cf6;
     border-radius: 10px;
     padding: 10px;
     letter-spacing: 1px;
@@ -790,7 +790,6 @@ html {
 
 @media (max-width: 900px) {
     .linha{
-        padding-bottom: 20px;
         text-align: left;
         display: block;
         width: fit-content;
@@ -805,7 +804,6 @@ html {
 .linha-branca {
     font-family: "Poppins", sans-serif;
     color: #ffff;
-
     letter-spacing: 1px;
     display: flex;
     align-items: center;
@@ -824,7 +822,7 @@ html {
     content: "";
     height: 2px;
     /* Espessura da linha */
-    width: 50px;
+    width: 20px;
     /* Comprimento fixo da linha (troque por 'flex: 1' se quiser que ocupe toda a largura) */
     background-color: #ffff;
     /* Cor da linha */
@@ -856,8 +854,10 @@ html {
 }
 
 
-.aj-header h2 {
+.aj-header h1 {
+    font-family: "Poppins", sans-serif;
     color: #fff;
+    font-weight: 700;
     font-size: 1.4rem;
     margin-top: 10px;
 }
@@ -874,7 +874,8 @@ html {
     font-family: "Poppins", sans-serif;
     margin-top: 10px;
     font-size: 1.4rem;
-    color: #111;
+    color: #424242;
+;
 }
 
 .aj-titulo p {
@@ -1031,9 +1032,9 @@ html {
 .sobre-topo h2 {
     padding-top: 10px;
     padding-bottom: 20px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 1.4rem;
-    color: #000000;
+    color: #424242;
 }
 
 /* Grade com texto de um lado e vídeo do outro */
@@ -1165,7 +1166,7 @@ html {
 @media (max-width: 768px) {
     .stats-container {
         display: flex;
-        width: 90%;
+        width: 100%;
         margin: auto;
     }
 
@@ -1322,7 +1323,7 @@ html {
 /* CARD */
 .ultra_card {
     margin-top: 30px;
-    width: 500px;
+    width: 450px;
     height: 250px;
     margin: 5px;
     flex: 0 0 auto;
@@ -1336,7 +1337,7 @@ html {
 }
 
 .ultra_card img {
-    width: 500px;
+    width: 450px;
     height: 100%;
     margin: auto;
     padding: 0;
@@ -1352,6 +1353,7 @@ html {
     position: absolute;
     bottom: 0;
     width: 100%;
+    height: 100%;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.75);
     color: white;
@@ -1361,7 +1363,8 @@ html {
     visibility: hidden;
     transform: translateY(20px);
     transition: all 0.4s ease;
-    padding: 10px;
+    padding: 80px;
+    margin: auto;
 }
 
 .ultra_card:hover .card_info {
@@ -1522,7 +1525,7 @@ html {
 .titulo-depoimentos h1 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #111;
+    color: #424242;
     margin: 10px 0;
 }
 
@@ -1634,7 +1637,7 @@ html {
 .institucional h1 {
     font-family: "Poppins", sans-serif;
     font-size: 1.4rem;
-    font-weight: 100;
+    font-weight: 700;
     color: #fffdfd;
     margin: 10px 0;
 }
@@ -1665,7 +1668,7 @@ html {
 .detalhes {
     width: 100%;
 
-    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.5);
+    box-shadow: inset 0 0 3px #f84857;
     border-radius: 20px;
     padding: 20px;
 
@@ -1675,7 +1678,7 @@ html {
 .futuro h1 {
     font-family: "Google Sans", sans-serif;
     color: #fff;
-    font-weight: bolder;
+    font-weight: 700;
     font-size: 1rem;
     margin: 1px;
     padding-bottom: 20px;
@@ -1701,19 +1704,19 @@ html {
 
 .futuro {
     width: 100%;
-    box-shadow: inset 0 0 20px rgba(50, 127, 243, 0.5);
+    box-shadow: inset 0 0 10px rgba(50, 127, 243, 0.5);
     border-radius: 20px;
     padding: 20px;
     z-index: 1;
 
 }
 
-.icone-inline {
-    width: 25px;
-    height: 25px;
+.icone-inline img {
+    width: 18px;
+    height: 18px;
     vertical-align: middle;
     /* Alinha o centro da imagem com o centro do texto */
-    margin: 0 5px;
+    margin: 0 0px;
 
 }
 
@@ -1776,7 +1779,7 @@ html {
 .trabalho h1 {
     font-family: "Poppins", sans-serif;
     font-size: 1.5em;
-    color: #111;
+    color: #424242;
     margin: 10px 0;
 }
 
@@ -1896,7 +1899,7 @@ html {
 .faq-titulo h1 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #111;
+    color: #424242;
     margin: 10px 0;
 }
 

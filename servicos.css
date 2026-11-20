@@ -397,10 +397,10 @@ html {
 
 .linha {
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-family: "Poppins", sans-serif;
     color: #8b5cf6;
-    border: 1px solid #c5c3c3;
+    border: 1px solid #8b5cf6;
     border-radius: 10px;
     padding: 10px;
     letter-spacing: 1px;
@@ -430,7 +430,7 @@ html {
 
     width: 100%;
     margin: auto;
-    padding: 40px 0px;
+    padding: 10px;
     background-image: url("img/empresa.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -477,7 +477,7 @@ html {
 .aj-cabecalho h2 {
     font-family: "Poppins", sans-serif;
     margin: 0 0 16px;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.2;
     font-weight: 700;
     letter-spacing: -1px;
@@ -485,12 +485,12 @@ html {
 }
 
 .aj-cabecalho h3 {
-    color: #222222;
+    color: #424242;
     font-family: "Poppins", sans-serif;
     margin: 0 0 16px;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.2;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: -1px;
 
 }
@@ -849,9 +849,9 @@ html {
 
 .sobre-topo h2 {
     font-family: "Poppins", sans-serif;
-    font-size: 2.1rem;
+    font-size: 2.4rem;
     line-height: 1.2;
-    color: #1b1b1b;
+    color: #424242;
     font-weight: 700;
     margin-bottom: 40px;
 }
@@ -859,6 +859,19 @@ html {
 .sobre-topo h2 span {
     color: #7e23c9;
     font-weight: 800;
+}
+
+@media (max-width:900px) {
+   
+.sobre-topo h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    color: #424242;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
 }
 
 /* Grade com texto de um lado e vídeo do outro */
@@ -911,7 +924,7 @@ html {
 /* Contentor principal dos indicadores */
 .stats-container {
     display: flex;
-    width: 90%;
+    width: 100%;
     padding: 10px;
     text-align: left;
     margin: left;
@@ -1055,10 +1068,6 @@ html {
         flex-direction: column;
         /* Empilha o texto e o vídeo */
         gap: 32px;
-    }
-
-    .sobre-topo h2 {
-        font-size: 26px;
     }
 }
 
@@ -1282,7 +1291,7 @@ html {
     margin: 15px 0 12px;
 
     color: #ffffff;
-    font-size: clamp(25px, 3vw, 31px);
+    font-size: 1.7rem;
     font-weight: 700;
     line-height: 1.18;
     letter-spacing: -0.8px;
@@ -1497,6 +1506,8 @@ html {
 
 .faq-titulo h1 {
     font-family: "Poppins", sans-serif;
+    color: #424242;
+    font-size: 1.7rem;
 }
 
 .faq-titulo span {
@@ -1554,8 +1565,8 @@ html {
 .faq-titulo-faq h1 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #111;
-    margin: 10px 0;
+    color: #424242;
+    margin: 20px 0;
 }
 
 .faq-titulo-faq p {
