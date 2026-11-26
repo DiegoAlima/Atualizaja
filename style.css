@@ -363,7 +363,7 @@ html {
     max-width: 80%; 
     position: relative; /* Mantém o fluxo natural dentro do cabeçalho */
     padding-top: 50px;
-    padding-left: 0;   /* Alinha com a margem esquerda da logo */
+    padding-left: 80px;   /* Alinha com a margem esquerda da logo */
     text-align: left;
     z-index: 100;
 }
@@ -378,7 +378,7 @@ html {
     background-image: url("img/baner-txt.png");
     background-repeat: no-repeat;
     background-size: 1600px auto;
-    background-position: 106% bottom;
+    background-position: 80% bottom;
 
     pointer-events: none;
     z-index: 1;
@@ -625,7 +625,7 @@ html {
         width: 100%;
         max-height: 800px;
         margin-bottom: 0px;
-        padding-top: 0px;
+        padding: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -831,6 +831,7 @@ html {
 
 }
 
+
 @media (max-width: 900px) {
     .linha{
         text-align: left;
@@ -901,13 +902,14 @@ html {
     font-family: "Poppins", sans-serif;
     color: #fff;
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin-top: 10px;
 }
 
 .aj-header p {
     color: #bdbdbd;
-    margin-top: 12px;
+    margin-top: 10px;
+    text-align: left;
 }
 
 
@@ -916,7 +918,8 @@ html {
 .aj-titulo h2 {
     font-family: "Poppins", sans-serif;
     margin-top: 10px;
-    font-size: 1.4rem;
+    font-weight: 700;
+    font-size: 1.8rem;
     color: #424242;
 ;
 }
@@ -924,6 +927,7 @@ html {
 .aj-titulo p {
     font-family: "Poppins", sans-serif;
     margin-top: 15px;
+    text-align: left;
     max-width: 700px;
     margin-inline: auto;
     color: #666;
@@ -1072,11 +1076,12 @@ html {
 }
 
 
-.sobre-topo h2 {
+.sobre-topo .alinhamento {
     padding-top: 10px;
     padding-bottom: 20px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 1.4rem;
+    font-weight: 700;
+    font-size: 1.8rem;
     color: #424242;
 }
 
@@ -1095,12 +1100,6 @@ html {
     /* Ocupa metade do espaço */
 }
 
-.sobre-texto h3 {
-    font-size: 22px;
-    color: #0f172a;
-    margin: 20px 0 10px;
-}
-
 .sobre-texto h3:first-child {
     margin-top: 0;
 }
@@ -1109,6 +1108,7 @@ html {
     color: #475569;
     font-size: 15px;
     line-height: 1.7;
+    text-align: left;
     margin-bottom: 16px;
     font-family: "Poppins", sans-serif;
 
@@ -1396,7 +1396,7 @@ html {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.75);
     color: white;
@@ -1406,7 +1406,7 @@ html {
     visibility: hidden;
     transform: translateY(20px);
     transition: all 0.4s ease;
-    padding: 80px;
+    padding: 20px;
     margin: auto;
 }
 
@@ -1505,7 +1505,7 @@ html {
 
     .ultra_card {
 
-        width: 350px;
+        width: 320px;
 
         height: 220px;
     }
@@ -1554,7 +1554,6 @@ html {
     text-align: center;
     margin-bottom: 60px;
     font-family: "Poppins", sans-serif;
-    padding: 5px;
 
 }
 
@@ -1566,14 +1565,17 @@ html {
 }
 
 .titulo-depoimentos h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
     color: #424242;
     margin: 10px 0;
 }
 
 .titulo-depoimentos p {
+    font-family: "Poppins", sans-serif;
     color: #666;
+    text-align: left;
 }
 
 .cards-depoimentos {
@@ -1645,24 +1647,6 @@ html {
     font-size: .9rem;
 }
 
-
-@media(max-width:900px) {
-    .cards-depoimentos{
-        width: 90%;
-        margin: auto;
-    }
-    .titulo-depoimentos {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .depoimentos {
-        width: 100%;
-        text-align: center;
-        margin: auto;
-    }
-}
-
 /* Formatação da section presença digital*/
 
 .institucional {
@@ -1679,7 +1663,7 @@ html {
 
 .institucional h1 {
     font-family: "Poppins", sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #fffdfd;
     margin: 10px 0;
@@ -1690,7 +1674,8 @@ html {
     width: 100%;
     font-family: "Poppins", sans-serif;
     line-height: 1;
-    font-size: 1em;
+    text-align: left;
+    font-size: 1rem;
     color: #c2c1c1;
     padding-bottom: 20px;
 }
@@ -1821,7 +1806,8 @@ html {
 
 .trabalho h1 {
     font-family: "Poppins", sans-serif;
-    font-size: 1.5em;
+    font-size: 1.8rem;
+    font-weight: 700;
     color: #424242;
     margin: 10px 0;
 }
@@ -1831,7 +1817,8 @@ html {
     width: 100%;
     font-family: "Poppins", sans-serif;
     line-height: 1;
-    font-size: 1em;
+    text-align: left;
+    font-size: 1rem;
     color: #666;
 }
 
@@ -1940,16 +1927,19 @@ html {
 }
 
 .faq-titulo h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
     color: #424242;
     margin: 10px 0;
 }
 
 .faq-titulo p {
+    font-family: "Poppins", sans-serif;
     color: #666;
     max-width: 600px;
     margin: auto;
+    text-align: left;
 }
 
 .faq-container {
