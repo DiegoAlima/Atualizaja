@@ -333,17 +333,6 @@ html {
 
 }
 
-
-.cabecalho {
-    padding-top: 100px;
-    padding-bottom: 80px;
-    width: 100%;
-    height: 100%;
-    background-image: url("img/fundo.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .conteudo {
     margin-top: 20px;
     margin: auto;
@@ -357,44 +346,109 @@ html {
     }
 }
 
-.info-baner {
-    width: 80%;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    position: absolute;
-    z-index: 1;
-    padding-top: 50px;
-    margin: auto;
-    z-index: 100;
+.cabecalho {
+    padding-top: 100px;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/fundo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 
 }
 
+.info-baner {
+    /* Deixa 40% da direita livres para o rapaz com notebook não encostar nos ícones */
+    max-width: 80%; 
+    position: relative; /* Mantém o fluxo natural dentro do cabeçalho */
+    padding-top: 50px;
+    padding-left: 0;   /* Alinha com a margem esquerda da logo */
+    text-align: left;
+    z-index: 100;
+}
 
+.baner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
 
+    background-image: url("img/baner-txt.png");
+    background-repeat: no-repeat;
+    background-size: 1600px auto;
+    background-position: 106% bottom;
 
-/* Telas de alta resolução / 4K */
-@media (min-width: 1920px),
-(-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
-    .banner {
-        background-image: url('img/baner.png');
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Ajuste específico para notebooks de até 1440px */
+@media (max-width: 1480px) {
+    .baner {
+        background-size: 1600px auto; /* Mantém exata a proporção que você aplicou */
+        background-position: 35% bottom; /* Diminua entre 115% e 130% para puxar mais à esquerda */
+    }
+}
+
+@media (max-width: 900px) {
+    /* Deixa o cabeçalho crescer conforme a altura do texto + imagem */
+   .cabecalho{
+        height: auto !important;
+        min-height: auto !important;
+        padding-bottom: 0 !important; /* Zera qualquer respiro inferior */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+.baner {
+        position: relative !important;
+        bottom: 0 !important;
+        right: auto;
+        width: 100%;
+        
+        /* Aumenta a altura da área e a escala da imagem para o rapaz crescer */
+        height: 100%; 
+        padding-top: 70px;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+
+        /* 220% compensa a área transparente da imagem e deixa o rapaz grande na tela */
+        background-size: 250% auto; 
+        
+        /* 'bottom' trava a base dele colada no fim da div; '88%' centraliza ele */
+        background-position: 78% bottom !important; 
     }
 }
 
 
+/* Telas de alta resolução / 4K 
+@media (min-width: 1920px),
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .banner {
+        background-image: url('img/baner-txt.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }
+}
+*/
+
 .titulo {
     padding: 70px 0;
-    width: 60%;
+    width: 70%;
     text-align: left;
     margin: auto;
     padding: 5px;
 }
 
-@media (max-width:1980px) {
+@media (max-width:1440px) {
     .titulo {
         padding: 50px 0;
-        width: 60%;
+        width: 75%;
         text-align: left;
         margin: auto;
 
@@ -403,28 +457,17 @@ html {
     .cabecalho {
         height: 500px;
         background-color: #0B0B0F;
-    }
-
-
-    .baner {
-        width: 100%;
-        background-image: url("img/baner.png");
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        position: relative;
-        height: clamp(220px, 30vw, 800vw);
-        text-align: center;
-        z-index: 1;
+        padding-bottom: 50px;
     }
 
     .info-baner {
 
-        margin-top: -60px;
+        margin-top: -30px;
 
     }
 }
+
+
 
 .titulo .chamada {
     color: #b55aff;
@@ -438,7 +481,7 @@ html {
 .titulo h1 {
     margin-top: 20px;
     width: 65%;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     font-weight: bolder;
     font-family: "Poppins", sans-serif;
     line-height: 1;
@@ -447,13 +490,13 @@ html {
 
 .titulo h1 span {
     color: #7b2cff;
-    font-size: 2.9rem;
+    font-size: 2.4rem;
     font-weight: bolder;
 }
 
 .titulo p {
     margin-top: 20px;
-    width: 80%;
+    width: 65%;
     font-family: "Poppins", sans-serif;
     font-size: 0.8em;
     color: #fff;
@@ -495,6 +538,7 @@ html {
 
 
 .vantagens {
+    width: 70%;
     display: flex;
     text-align: center;
     margin-top: 20px;
@@ -547,14 +591,11 @@ html {
 @media (max-width:900px) {
 
     .cabecalho {
-        height: 750px;
-        padding-bottom: 50px;
+        width: 100%;
+        height: 100% !important;
         flex-direction: column;
         text-align: center;
-    }
-
-    .baner {
-        display: none;
+        margin: auto;
     }
 
     .img-chamada {
@@ -572,26 +613,28 @@ html {
 
     .vantagens {
         width: 100%;
+        height: 100%;
         display: flex;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 10px;
         flex-direction: column;
     }
-
 
 
     .info-baner {
         width: 100%;
-        margin-top: -90px;
+        max-height: 800px;
+        margin-bottom: 0px;
+        padding-top: 0px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        align-items: center;
+        margin: auto;
     }
 
     .titulo {
-        width: 80%;
+        width: 100%;
         text-align: left;
         margin: auto;
     }
