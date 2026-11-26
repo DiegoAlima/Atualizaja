@@ -3,65 +3,150 @@
     padding: 0;
 }
 
+
+/* TESTE DE CORREÇÃO DE OVERFLOW MOBILE */
+
+@media (max-width: 900px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+    }
+
+    body {
+        position: relative;
+    }
+
+    section,
+    header,
+    footer,
+    main {
+        max-width: 100%;
+    }
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+    }
+
+}
+
+/* Impede imagens e vídeos de ultrapassarem seus containers */
+
+img,
+iframe,
+video {
+    max-width: 100%;
+}
+
+/* Ajuste do conteúdo principal do banner */
+
+.info-baner {
+    box-sizing: border-box;
+    max-width: 80%;
+    padding-left: clamp(20px, 5vw, 80px);
+}
+
+/* Ajuste dos títulos */
+
+.titulo {
+    box-sizing: border-box;
+}
+
+/* Ajuste dos indicadores */
+
+.stats-container {
+    box-sizing: border-box;
+}
+
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Fade In somente no mobile e tablets */
-@media (max-width: 900px) {
 
-    .fade-mobile {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+/* ================================
+   FADE IN VERTICAL
+================================ */
 
-    .fade-mobile.ativo {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
+.fade-mobile {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-@media (max-width: 2900px) {
-
-    /* Surge da esquerda para a direita */
-    .fade-esquerda {
-        opacity: 0;
-        transform: translateX(-50px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    /* Surge da direita para a esquerda */
-    .fade-direita {
-        opacity: 0;
-        transform: translateX(50px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    /* Estado final das animações */
-    .fade-esquerda.ativo,
-    .fade-direita.ativo {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
+.fade-mobile.ativo {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-@media (max-width: 900px) {
 
+/* ================================
+   FADE IN DA ESQUERDA
+================================ */
+
+.fade-esquerda {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+/* ================================
+   FADE IN DA DIREITA
+================================ */
+
+.fade-direita {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+/* ================================
+   ESTADO FINAL
+================================ */
+
+.fade-esquerda.ativo,
+.fade-direita.ativo {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* ================================
+   ANIMAÇÃO DOS TÍTULOS
+================================ */
+
+.titulo-animado {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s ease,
+                transform 0.8s ease;
+}
+
+.titulo-animado.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ================================
+   ACESSIBILIDADE
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-mobile,
+    .fade-esquerda,
+    .fade-direita,
     .titulo-animado {
-        opacity: 0;
-        transform: translateY(25px);
-        transition: opacity 0.8s ease,
-                    transform 0.8s ease;
-    }
-
-    .titulo-animado.ativo {
         opacity: 1;
-        transform: translateY(0);
+        transform: none;
+        transition: none;
     }
-
 }
 
 /*Formatação do menu*/
@@ -360,7 +445,7 @@ html {
 
 .info-baner {
     /* Deixa 40% da direita livres para o rapaz com notebook não encostar nos ícones */
-    max-width: 80%; 
+    max-width: 75%; 
     position: relative; /* Mantém o fluxo natural dentro do cabeçalho */
     padding-top: 50px;
     padding-left: 80px;   /* Alinha com a margem esquerda da logo */
@@ -448,7 +533,7 @@ html {
 @media (max-width:1440px) {
     .titulo {
         padding: 50px 0;
-        width: 75%;
+        width: 80%;
         text-align: left;
         margin: auto;
 
@@ -830,19 +915,18 @@ html {
     text-transform: uppercase;
 
 }
+.alinhamento{
+        text-align: left;
+    }
 
-
-@media (max-width: 900px) {
-    .linha{
+.linha{
         text-align: left;
         display: block;
         width: fit-content;
     }
 
-    .alinhamento{
-        text-align: left;
-    }
-}
+    
+
 
 
 .linha-branca {
@@ -887,13 +971,11 @@ html {
 
 .aj-titulo {
     padding-top: 10px;
-    margin: auto;
-
+  
 }
 
 /* HEADER */
 .aj-header {
-    text-align: center;
     padding: 5px;
 }
 
@@ -929,7 +1011,6 @@ html {
     margin-top: 15px;
     text-align: left;
     max-width: 700px;
-    margin-inline: auto;
     color: #666;
     line-height: 1.6;
 }
@@ -1131,10 +1212,8 @@ html {
 /* Contentor principal dos indicadores */
 .stats-container {
     display: flex;
-    width: 90%;
-    padding: 10px;
-    text-align: left;
-    margin: left;
+    width: 100%;
+    align-items: left;
 
 }
 
@@ -1144,7 +1223,7 @@ html {
     position: relative;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     
 }
 
@@ -1664,7 +1743,7 @@ html {
 .institucional h1 {
     font-family: "Poppins", sans-serif;
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #fffdfd;
     margin: 10px 0;
 }
@@ -1938,7 +2017,6 @@ html {
     font-family: "Poppins", sans-serif;
     color: #666;
     max-width: 600px;
-    margin: auto;
     text-align: left;
 }
 

@@ -243,7 +243,7 @@
                         Soluções completas para o seu negócio
                     </h2>
 
-                    <p class="titulo-animado">
+                    <p class="alinhamento titulo-animado">
                         Sites modernos, rápidos e otimizados para gerar mais confiança,
                         autoridade e vendas para sua empresa.
                     </p>
@@ -441,7 +441,7 @@
             <div class="conteudo">
                 <div class="margin">
                     <span class="linha fade-esquerda"> PRESENÇA DIGITAL</span>
-                    <h1 class="alinhamento titulo-animado"> Empresas sem site perdem oportunidades todos os dias.</h1>
+                    <h1 class="alinhamento titulo-animado"> Empresas sem site perdem oportunidades todos os dias</h1>
                 </div>
                 <section class="detalhes-info ">
                     <div class="detalhes fade-esquerda">
@@ -895,90 +895,34 @@
     </main>
     <script>
 
-        // efeito para titulo
+      
+document.addEventListener("DOMContentLoaded", () => {
 
-        const titulos = document.querySelectorAll('.titulo-animado');
+    const elementos = document.querySelectorAll(
+        ".fade-mobile, .fade-esquerda, .fade-direita, .titulo-animado"
+    );
 
-        if (window.innerWidth <= 900) {
+    const observer = new IntersectionObserver((entradas) => {
 
-            const observerTitulos = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
 
-                entradas.forEach((entrada) => {
+            if (entrada.isIntersecting) {
+                entrada.target.classList.add("ativo");
+                observer.unobserve(entrada.target);
+            }
 
-                    if (entrada.isIntersecting) {
-                        entrada.target.classList.add('ativo');
-                        observerTitulos.unobserve(entrada.target);
-                    }
-
-                });
-
-            }, {
-                threshold: 0.5
-            });
-
-            titulos.forEach((titulo) => {
-                observerTitulos.observe(titulo);
-            });
-
-        }
-
-        //direita pra esquerda e esquerda pra direita
-
-        const elementoss = document.querySelectorAll(
-            '.fade-esquerda, .fade-direita'
-        );
-
-        if (window.innerWidth <= 2900) {
-
-            const observer = new IntersectionObserver((entradas) => {
-
-                entradas.forEach((entrada) => {
-
-                    if (entrada.isIntersecting) {
-
-                        entrada.target.classList.add('ativo');
-
-                        observer.unobserve(entrada.target);
-
-                    }
-
-                });
-
-            }, {
-                threshold: 0.15
-            });
-
-            elementoss.forEach((elemento) => {
-                observer.observe(elemento);
-            });
-
-        }
-
-        // Efeito Fad in
-        const elementos = document.querySelectorAll('.fade-mobile');
-
-        const observer = new IntersectionObserver((entradas) => {
-
-            entradas.forEach((entrada) => {
-
-                if (entrada.isIntersecting) {
-                    entrada.target.classList.add('ativo');
-                    observer.unobserve(entrada.target);
-                }
-
-            });
-
-        }, {
-            threshold: 0.15
         });
 
-        if (window.innerWidth <= 900) {
+    }, {
+        threshold: 0.15
+    });
 
-            elementos.forEach((elemento) => {
-                observer.observe(elemento);
-            });
+    elementos.forEach((elemento) => {
+        observer.observe(elemento);
+    });
 
-        }
+});
+
         // Efeito Box contagem caixa de texto
 
         document.addEventListener("DOMContentLoaded", () => {
