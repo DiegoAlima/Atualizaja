@@ -418,19 +418,6 @@ html {
 
 }
 
-.conteudo {
-    margin-top: 20px;
-    margin: auto;
-    width: 70%;
-}
-
-@media(max-width:900px) {
-    .conteudo {
-        margin: auto;
-        width: 90%;
-    }
-}
-
 .cabecalho {
     padding-top: 100px;
     padding-bottom: 10px;
@@ -440,8 +427,34 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
+
+.conteudo {
+    margin-top: 20px;
+    margin: auto;
+    width: 70%;
+}
+
+@media(max-width:900px) {
+.conteudo {
+    margin: auto;
+    width: 90%;
+ }
+    
+.cabecalho {
+    padding-top: 100px;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/fundo-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 
 }
+}
+
+
 
 .info-baner {
     /* Deixa 40% da direita livres para o rapaz com notebook não encostar nos ícones */
@@ -496,15 +509,15 @@ html {
         
         /* Aumenta a altura da área e a escala da imagem para o rapaz crescer */
         height: 100%; 
-        padding-top: 70px;
+        padding-top: 100px;
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
 
         /* 220% compensa a área transparente da imagem e deixa o rapaz grande na tela */
-        background-size: 250% auto; 
+        background-size: 280% auto; 
         
         /* 'bottom' trava a base dele colada no fim da div; '88%' centraliza ele */
-        background-position: 78% bottom !important; 
+        background-position: 76% bottom !important; 
     }
 }
 
@@ -708,7 +721,7 @@ html {
 
     .info-baner {
         width: 100%;
-        max-height: 800px;
+        max-height: 780px;
         margin-bottom: 0px;
         padding: 0;
         display: flex;
@@ -722,6 +735,7 @@ html {
         width: 100%;
         text-align: left;
         margin: auto;
+        line-height: 0.9;
     }
 
 
@@ -747,7 +761,7 @@ html {
     }
 
     .titulo h1 span {
-        color: #5e00c9;
+        color: #7a11f3;
         font-size: 2.5rem;
         font-weight: bolder;
     }
@@ -906,9 +920,8 @@ html {
     display: inline-block;
     align-items: center;
     justify-content: center;
-    gap: 16px;
     /* Espaçamento entre o texto e as linhas */
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     font-weight: 700;
     letter-spacing: 2px;
     /* Espaço entre as letras */
@@ -923,37 +936,39 @@ html {
         text-align: left;
         display: block;
         width: fit-content;
-    }
-
-    
-
-
-
-.linha-branca {
-    font-family: "Poppins", sans-serif;
-    color: #ffff;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    /* Espaçamento entre o texto e as linhas */
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    /* Espaço entre as letras */
-    text-transform: uppercase;
 }
 
-.linha-branca::before,
-.linha-branca::after {
-    content: "";
-    height: 2px;
-    /* Espessura da linha */
-    width: 20px;
-    /* Comprimento fixo da linha (troque por 'flex: 1' se quiser que ocupe toda a largura) */
-    background-color: #ffff;
-    /* Cor da linha */
+
+.linha-institucionalazul {
+    font-family: "Poppins", sans-serif;
+    color: #fff !important;
+    border: 1px solid #2273BE;
+    background-color: #0d0346;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0px auto;
+    display: inline-block;
+
+    /* Espaçamento entre o texto e as linhas */
+    font-size: 0.7rem;
+    font-weight: 800;
+    /* Espaço entre as letras */
+}
+
+
+.linha-institucionalver {
+    font-family: "Poppins", sans-serif;
+    color: #ec757f !important;
+    border: 0.1px solid #d85964;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0px auto;
+    display: inline-block;
+
+    /* Espaçamento entre o texto e as linhas */
+    font-size: 0.6rem;
+    font-weight: 600;
+    /* Espaço entre as letras */
 }
 
 /* Servicos prestados formatação */
@@ -983,7 +998,7 @@ html {
 .aj-header h1 {
     font-family: "Poppins", sans-serif;
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.8rem;
     margin-top: 10px;
 }
@@ -1000,7 +1015,7 @@ html {
 .aj-titulo h2 {
     font-family: "Poppins", sans-serif;
     margin-top: 10px;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.8rem;
     color: #424242;
 ;
@@ -1127,6 +1142,8 @@ html {
 /* Container que centraliza tudo no meio da página */
 .container {
     width: 70%;
+    height: 100%;
+    padding-bottom: 50px;
     /* Largura máxima na tela */
     margin: 0 auto;
     /* Centraliza horizontalmente na tela */
@@ -1161,7 +1178,7 @@ html {
     padding-top: 10px;
     padding-bottom: 20px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.8rem;
     color: #424242;
 }
@@ -1261,6 +1278,11 @@ html {
     height: 50px;
     margin: auto;
     font-variant-numeric: tabular-nums;
+
+    /* Bordas */
+    box-shadow:
+        inset 0 0 0 2px #ffffff,
+        0 0 0 2px  #6B3CA2;
 }
 
 
@@ -1636,17 +1658,10 @@ html {
 
 }
 
-.titulo-depoimentos span {
-    color: #8200ff;
-    font-weight: 700;
-    font-size: .9rem;
-    letter-spacing: 1px;
-}
-
 .titulo-depoimentos h1 {
     font-family: "Poppins", sans-serif;
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #424242;
     margin: 10px 0;
 }
@@ -1742,14 +1757,14 @@ html {
 
 .institucional h1 {
     font-family: "Poppins", sans-serif;
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: 200;
     color: #fffdfd;
-    margin: 10px 0;
+
 }
 
 .institucional p {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
     font-family: "Poppins", sans-serif;
     line-height: 1;
@@ -1778,22 +1793,25 @@ html {
     box-shadow: inset 0 0 3px #f84857;
     border-radius: 20px;
     padding: 20px;
+    margin: auto;
+    align-items: center;
 
 }
 
 .detalhes h1,
 .futuro h1 {
     font-family: "Google Sans", sans-serif;
-    color: #fff;
-    font-weight: 700;
     font-size: 1rem;
-    margin: 1px;
-    padding-bottom: 20px;
+    margin-bottom: 35px;
 
 }
 
 .detalhes div {
+    width: 100%;
     padding: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+
 }
 
 .detalhes div h2 {
@@ -1811,7 +1829,8 @@ html {
 
 .futuro {
     width: 100%;
-    box-shadow: inset 0 0 10px rgba(50, 127, 243, 0.5);
+    border: 1px solid #2273BE;
+    background-color: #0d014e;
     border-radius: 20px;
     padding: 20px;
     z-index: 1;
@@ -1829,6 +1848,7 @@ html {
 
 .futuro div {
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 .futuro div h2 {
@@ -1875,18 +1895,10 @@ html {
     padding: 5px;
 }
 
-.oque-fazemos {
-    font-family: "Poppins", sans-serif;
-    color: #8200ff;
-    font-weight: bolder;
-    font-size: .9rem;
-    letter-spacing: 1px;
-}
-
 .trabalho h1 {
     font-family: "Poppins", sans-serif;
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #424242;
     margin: 10px 0;
 }
@@ -1998,17 +2010,10 @@ html {
     padding: 3px;
 }
 
-.faq-titulo span {
-    color: #7b2cff;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
 .faq-titulo h1 {
     font-family: "Poppins", sans-serif;
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #424242;
     margin: 10px 0;
 }
