@@ -558,7 +558,7 @@ html {
         position: absolute !important;
         top: 24.3% !important;
         left: 51.4% !important;
-        width: 12.0% !important;
+        width: 12.1% !important;
         height: 14.3% !important;
         object-fit: cover !important;
         border: 5px solid #939CA5;
@@ -1873,15 +1873,39 @@ html {
 
 }
 
+
+/* animação keyFrame destaque */
 .futuro {
     width: 100%;
-    border: 1px solid #2273BE;
+    border: 1px solid rgba(0, 140, 255, 0.5);
     background-color: #0d014e;
     border-radius: 20px;
     padding: 20px;
     z-index: 1;
+    animation: bordaAzul 2.5s ease-in-out infinite;
+}
+
+@keyframes bordaAzul {
+
+    0% {
+        border-color: rgba(0, 140, 255, 0.3);
+        box-shadow: 0 0 3px rgba(0, 140, 255, 0.1);
+    }
+
+    50% {
+        border-color: rgba(0, 140, 255, 1);
+        box-shadow:
+            0 0 8px rgba(0, 140, 255, 0.5),
+            0 0 18px rgba(0, 140, 255, 0.3);
+    }
+
+    100% {
+        border-color: rgba(0, 140, 255, 0.3);
+        box-shadow: 0 0 3px rgba(0, 140, 255, 0.1);
+    }
 
 }
+
 
 .icone-inline img {
     width: 18px;
