@@ -128,9 +128,17 @@
                     </div>
                 </div>
             </div>
-            <div class="baner fade-mobile">
-                
+
+            <div class="baner notebook-container fade-mobile">
+                <img src="img/baner-txt.png" alt="Homem segurando notebook" class="notebook-img">
+
+                <!-- O vídeo travado dentro da tela branca -->
+                <video class="notebook-video" autoplay loop muted playsinline>
+                    <source src="img/video-info.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
             </div>
+            
         </section>
 
         <section class="empresas">
@@ -896,33 +904,33 @@
     </main>
     <script>
 
-      
-document.addEventListener("DOMContentLoaded", () => {
 
-    const elementos = document.querySelectorAll(
-        ".fade-mobile, .fade-esquerda, .fade-direita, .titulo-animado"
-    );
+        document.addEventListener("DOMContentLoaded", () => {
 
-    const observer = new IntersectionObserver((entradas) => {
+            const elementos = document.querySelectorAll(
+                ".fade-mobile, .fade-esquerda, .fade-direita, .titulo-animado"
+            );
 
-        entradas.forEach((entrada) => {
+            const observer = new IntersectionObserver((entradas) => {
 
-            if (entrada.isIntersecting) {
-                entrada.target.classList.add("ativo");
-                observer.unobserve(entrada.target);
-            }
+                entradas.forEach((entrada) => {
+
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add("ativo");
+                        observer.unobserve(entrada.target);
+                    }
+
+                });
+
+            }, {
+                threshold: 0.15
+            });
+
+            elementos.forEach((elemento) => {
+                observer.observe(elemento);
+            });
 
         });
-
-    }, {
-        threshold: 0.15
-    });
-
-    elementos.forEach((elemento) => {
-        observer.observe(elemento);
-    });
-
-});
 
         // Efeito Box contagem caixa de texto
 

@@ -125,7 +125,7 @@ html {
     opacity: 0;
     transform: translateY(25px);
     transition: opacity 0.8s ease,
-                transform 0.8s ease;
+        transform 0.8s ease;
 }
 
 .titulo-animado.ativo {
@@ -139,6 +139,7 @@ html {
 ================================ */
 
 @media (prefers-reduced-motion: reduce) {
+
     .fade-mobile,
     .fade-esquerda,
     .fade-direita,
@@ -427,6 +428,19 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    overflow: hidden;
+}
+
+.info-baner {
+    /* Deixa 40% da direita livres para o rapaz com notebook não encostar nos ícones */
+    max-width: 75%;
+    position: relative;
+    /* Mantém o fluxo natural dentro do cabeçalho */
+    padding-top: 50px;
+    padding-left: 80px;
+    /* Alinha com a margem esquerda da logo */
+    text-align: left;
+    z-index: 100;
 }
 
 .conteudo {
@@ -435,92 +449,123 @@ html {
     width: 70%;
 }
 
+
 @media(max-width:900px) {
-.conteudo {
-    margin: auto;
-    width: 90%;
- }
-    
-.cabecalho {
-    padding-top: 100px;
-    padding-bottom: 10px;
-    width: 100%;
-    height: 100%;
-    background-image: url("img/fundo-mobile.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+
+
+    .cabecalho {
+        padding-top: 100px;
+        padding-bottom: 10px;
+        width: 100%;
+        height: 100%;
+        background-image: url("img/fundo-mobile.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    .info-baner {
+        /* Deixa 40% da direita livres para o rapaz com notebook não encostar nos ícones */
+        max-width: 90%;
+        height: 100%;
+        position: relative;
+        /* Mantém o fluxo natural dentro do cabeçalho */
+        padding-top: 50px;
+        /* Alinha com a margem esquerda da logo */
+        text-align: left;
+        z-index: 100;
+    }
+
+    .conteudo {
+        margin: auto;
+        width: 90%;
+    }
 
 }
-}
 
-
-
-.info-baner {
-    /* Deixa 40% da direita livres para o rapaz com notebook não encostar nos ícones */
-    max-width: 75%; 
-    position: relative; /* Mantém o fluxo natural dentro do cabeçalho */
-    padding-top: 50px;
-    padding-left: 80px;   /* Alinha com a margem esquerda da logo */
-    text-align: left;
-    z-index: 100;
-}
-
-.baner {
+/* DESKTOP (acima de 1480px): imagem panorâmica ancorada na base direita */
+.baner.notebook-container {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 100%;
-    height: 100%;
-
-    background-image: url("img/baner-txt.png");
-    background-repeat: no-repeat;
-    background-size: 1600px auto;
-    background-position: 80% bottom;
-
+    width: 1600px; /* Mesma largura que você usava no background-size */
+    max-width: none;
+    height: auto;
     pointer-events: none;
     z-index: 1;
+    display: block;
 }
 
-/* Ajuste específico para notebooks de até 1440px */
+.notebook-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* 1. Coordenadas exatas da tela branca do notebook na imagem baner-txt.png */
+.notebook-video {
+    position: absolute;
+    top: 43.8%;      /* Sobe o vídeo para encaixar exatamente na tela branca */
+    left: 51.5%;     /* Alinha na horizontal da tela branca */
+    width: 12.2%;    /* Largura da tela branca */
+    height: 26.5%;   /* Altura da tela branca */
+    object-fit: cover;
+    z-index: 2;
+    border: 5px solid #939CA5;
+}
+
+/* NOTEBOOKS ATÉ 1480px (ex: 1366px e 1440px) */
 @media (max-width: 1480px) {
-    .baner {
-        background-size: 1600px auto; /* Mantém exata a proporção que você aplicou */
-        background-position: 35% bottom; /* Diminua entre 115% e 130% para puxar mais à esquerda */
+    .baner.notebook-container {
+        position: absolute; /* Mantém absoluto para não quebrar o texto nem sumir */
+        width: 1420px;      /* Reduz levemente para caber bem em telas de 1366px/1440px */
+        right: -60px;       /* Puxa o rapaz para a direita para não encostar no texto */
+        bottom: 0;
+        max-width: none;
+
     }
+    /* Como o vídeo está em % dentro de .baner, ele acompanha automaticamente! */
 }
 
+/* 2. MOBILE (até 900px) — Centraliza o notebook + rapaz e cola na base */
 @media (max-width: 900px) {
-    /* Deixa o cabeçalho crescer conforme a altura do texto + imagem */
-   .cabecalho{
+   /* 1. Tira o espaço extra do fundo do cabeçalho */
+    .cabecalho {
         height: auto !important;
         min-height: auto !important;
-        padding-bottom: 0 !important; /* Zera qualquer respiro inferior */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-.baner {
-        position: relative !important;
-        bottom: 0 !important;
-        right: auto;
-        width: 100%;
-        
-        /* Aumenta a altura da área e a escala da imagem para o rapaz crescer */
-        height: 100%; 
-        padding-top: 100px;
-        margin-bottom: 0 !important;
         padding-bottom: 0 !important;
-
-        /* 220% compensa a área transparente da imagem e deixa o rapaz grande na tela */
-        background-size: 280% auto; 
-        
-        /* 'bottom' trava a base dele colada no fim da div; '88%' centraliza ele */
-        background-position: 76% bottom !important; 
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
-}
 
+    /* 2. Aumenta a imagem do rapaz e cola ela na base do cabeçalho */
+    .baner.notebook-container {
+        position: relative !important;
+        width: 290% !important;
+        max-width: none !important;
+        margin-left: -144% !important;
+        margin-top: -50px !important;
+        /* Puxa a imagem para baixo até o corte da camisa encostar na borda branca */
+        margin-bottom: -75% !important; 
+        padding: 0 !important;
+        right: auto !important;
+    }
+
+    /* 3. Encaixa o vídeo dentro da tela branca do notebook */
+    .baner.notebook-container .notebook-video {
+        position: absolute !important;
+        top: 24.3% !important;
+        left: 51.4% !important;
+        width: 12.0% !important;
+        height: 14.3% !important;
+        object-fit: cover !important;
+        border: 5px solid #939CA5;
+    }
+
+
+}
 
 /* Telas de alta resolução / 4K 
 @media (min-width: 1920px),
@@ -690,7 +735,6 @@ html {
 
     .cabecalho {
         width: 100%;
-        height: 100% !important;
         flex-direction: column;
         text-align: center;
         margin: auto;
@@ -721,7 +765,7 @@ html {
 
     .info-baner {
         width: 100%;
-        max-height: 780px;
+        max-height: 800px ;
         margin-bottom: 0px;
         padding: 0;
         display: flex;
@@ -928,14 +972,15 @@ html {
     text-transform: uppercase;
 
 }
-.alinhamento{
-        text-align: left;
-    }
 
-.linha{
-        text-align: left;
-        display: block;
-        width: fit-content;
+.alinhamento {
+    text-align: left;
+}
+
+.linha {
+    text-align: left;
+    display: block;
+    width: fit-content;
 }
 
 
@@ -986,7 +1031,7 @@ html {
 
 .aj-titulo {
     padding-top: 10px;
-  
+
 }
 
 /* HEADER */
@@ -1018,7 +1063,7 @@ html {
     font-weight: 500;
     font-size: 1.8rem;
     color: #424242;
-;
+    ;
 }
 
 .aj-titulo p {
@@ -1241,7 +1286,7 @@ html {
     display: flex;
     flex-direction: column;
     text-align: left;
-    
+
 }
 
 /* Divisores verticais entre as colunas */
@@ -1282,7 +1327,7 @@ html {
     /* Bordas */
     box-shadow:
         inset 0 0 0 2px #ffffff,
-        0 0 0 2px  #6B3CA2;
+        0 0 0 2px #6B3CA2;
 }
 
 
@@ -1291,7 +1336,7 @@ html {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     text-shadow: none;
-    
+
 }
 
 /* Texto descritivo inferior */
@@ -1758,7 +1803,7 @@ html {
 .institucional h1 {
     font-family: "Poppins", sans-serif;
     font-size: 1.6rem;
-    font-weight: 200;
+    font-weight: 600;
     color: #fffdfd;
 
 }
@@ -1800,8 +1845,9 @@ html {
 
 .detalhes h1,
 .futuro h1 {
+    font-weight: 600;
     font-family: "Google Sans", sans-serif;
-    font-size: 1rem;
+    font-size: .9rem;
     margin-bottom: 35px;
 
 }
@@ -1937,10 +1983,10 @@ html {
     margin: 12px;
     border-radius: 10px;
     background-color: #fff;
-     transition: .3s;
+    transition: .3s;
 }
 
-.cartao:hover{
+.cartao:hover {
     transform: translateY(-10px);
 }
 
@@ -2336,111 +2382,113 @@ html {
 }
 
 /* Fundo escuro embaçado atrás do Lightbox */
-.btn-privacy{
+.btn-privacy {
     padding: 10px;
     border-radius: 10px;
     border: none;
     background: linear-gradient(135deg, #5e00c9, #725b8d);
     color: #fff;
-    cursor:pointer;
+    cursor: pointer;
 }
+
 .modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(59, 59, 59, 0.8);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  z-index: 9999;
-  
-  /* Escondido por padrão com transição suave */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: fixed;
+    inset: 0;
+    background: rgba(59, 59, 59, 0.8);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 9999;
+
+    /* Escondido por padrão com transição suave */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 /* Classe ativada via JS */
 .modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Caixa de conteúdo */
 .modal-box {
-  background: #14141c;
-  color: #e4e4e7;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 600px;
-  max-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  transform: translateY(15px) scale(0.98);
-  transition: transform 0.3s ease;
+    background: #14141c;
+    color: #e4e4e7;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(15px) scale(0.98);
+    transition: transform 0.3s ease;
 }
 
 .modal-overlay.active .modal-box {
-  transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1);
 }
 
 /* Cabeçalho do modal */
 .modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .modal-header h2 {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  font-size: 1.25rem;
-  color: #ffffff;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25rem;
+    color: #ffffff;
 }
 
 .modal-close {
-  background: none;
-  border: none;
-  color: #a1a1aa;
-  font-size: 1.75rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: color 0.2s ease;
+    background: none;
+    border: none;
+    color: #a1a1aa;
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .modal-close:hover {
-  color: #8200ff;
+    color: #8200ff;
 }
 
 /* Corpo com barra de rolagem interna */
 .modal-body {
-  padding: 24px;
-  overflow-y: auto;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #d4d4d8;
+    padding: 24px;
+    overflow-y: auto;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #d4d4d8;
 }
 
 .modal-body p {
-  font-family: "Poppins", sans-serif;  
-  margin-bottom: 16px;
-  text-align: left;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 16px;
+    text-align: left;
 }
 
 .modal-body strong {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 /* Estilização opcional da barra de rolagem */
 .modal-body::-webkit-scrollbar {
-  width: 6px;
+    width: 6px;
 }
+
 .modal-body::-webkit-scrollbar-thumb {
-  background: #8200ff;
-  border-radius: 4px;
+    background: #8200ff;
+    border-radius: 4px;
 }
 
 /*Formatação do rodape*/
