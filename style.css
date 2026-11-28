@@ -433,7 +433,7 @@ html {
 
 .info-baner {
     /* Deixa 40% da direita livres para o rapaz com notebook não encostar nos ícones */
-    max-width: 75%;
+    max-width: 80%;
     position: relative;
     /* Mantém o fluxo natural dentro do cabeçalho */
     padding-top: 50px;
@@ -446,7 +446,7 @@ html {
 .conteudo {
     margin-top: 20px;
     margin: auto;
-    width: 70%;
+    width: 80%;
 }
 
 
@@ -488,7 +488,8 @@ html {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 1600px; /* Mesma largura que você usava no background-size */
+    width: 1550px;
+    /* Mesma largura que você usava no background-size */
     max-width: none;
     height: auto;
     pointer-events: none;
@@ -506,10 +507,14 @@ html {
 /* 1. Coordenadas exatas da tela branca do notebook na imagem baner-txt.png */
 .notebook-video {
     position: absolute;
-    top: 43.8%;      /* Sobe o vídeo para encaixar exatamente na tela branca */
-    left: 51.5%;     /* Alinha na horizontal da tela branca */
-    width: 12.2%;    /* Largura da tela branca */
-    height: 26.5%;   /* Altura da tela branca */
+    top: 43.8%;
+    /* Sobe o vídeo para encaixar exatamente na tela branca */
+    left: 51.5%;
+    /* Alinha na horizontal da tela branca */
+    width: 12.2%;
+    /* Largura da tela branca */
+    height: 26.5%;
+    /* Altura da tela branca */
     object-fit: cover;
     z-index: 2;
     border: 5px solid #939CA5;
@@ -518,19 +523,24 @@ html {
 /* NOTEBOOKS ATÉ 1480px (ex: 1366px e 1440px) */
 @media (max-width: 1480px) {
     .baner.notebook-container {
-        position: absolute; /* Mantém absoluto para não quebrar o texto nem sumir */
-        width: 1420px;      /* Reduz levemente para caber bem em telas de 1366px/1440px */
-        right: -60px;       /* Puxa o rapaz para a direita para não encostar no texto */
+        position: absolute;
+        /* Mantém absoluto para não quebrar o texto nem sumir */
+        width: 1520px;
+        /* Reduz levemente para caber bem em telas de 1366px/1440px */
+        right: -170px;
+        /* Puxa o rapaz para a direita para não encostar no texto */
         bottom: 0;
         max-width: none;
 
     }
+
     /* Como o vídeo está em % dentro de .baner, ele acompanha automaticamente! */
 }
 
 /* 2. MOBILE (até 900px) — Centraliza o notebook + rapaz e cola na base */
 @media (max-width: 900px) {
-   /* 1. Tira o espaço extra do fundo do cabeçalho */
+
+    /* 1. Tira o espaço extra do fundo do cabeçalho */
     .cabecalho {
         height: auto !important;
         min-height: auto !important;
@@ -548,7 +558,7 @@ html {
         margin-left: -144% !important;
         margin-top: -50px !important;
         /* Puxa a imagem para baixo até o corte da camisa encostar na borda branca */
-        margin-bottom: -75% !important; 
+        margin-bottom: -75% !important;
         padding: 0 !important;
         right: auto !important;
     }
@@ -582,7 +592,7 @@ html {
 
 .titulo {
     padding: 70px 0;
-    width: 70%;
+    width: 80%;
     text-align: left;
     margin: auto;
     padding: 5px;
@@ -591,7 +601,7 @@ html {
 @media (max-width:1440px) {
     .titulo {
         padding: 50px 0;
-        width: 80%;
+        width: 100%;
         text-align: left;
         margin: auto;
 
@@ -623,8 +633,8 @@ html {
 
 .titulo h1 {
     margin-top: 20px;
-    width: 65%;
-    font-size: 2.4rem;
+    width: 80%;
+    font-size: 3.0rem;
     font-weight: bolder;
     font-family: "Poppins", sans-serif;
     line-height: 1;
@@ -633,13 +643,13 @@ html {
 
 .titulo h1 span {
     color: #7b2cff;
-    font-size: 2.4rem;
+    font-size: 3.0rem;
     font-weight: bolder;
 }
 
 .titulo p {
     margin-top: 20px;
-    width: 65%;
+    width: 55%;
     font-family: "Poppins", sans-serif;
     font-size: 0.8em;
     color: #fff;
@@ -765,7 +775,7 @@ html {
 
     .info-baner {
         width: 100%;
-        max-height: 800px ;
+        max-height: 800px;
         margin-bottom: 0px;
         padding: 0;
         display: flex;
@@ -1186,7 +1196,7 @@ html {
 
 /* Container que centraliza tudo no meio da página */
 .container {
-    width: 70%;
+    width: 80%;
     height: 100%;
     padding-bottom: 50px;
     /* Largura máxima na tela */
@@ -1394,36 +1404,33 @@ html {
 
 .video-responsivo {
     position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
+    width: 440px;
+    height: 540px;
     margin: 0;
     overflow: hidden;
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    align-items: center;
 }
 
 .video-responsivo iframe {
+    margin: auto;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     border: 0;
 }
 
 /* Responsividade para Celular e Tablet */
 
 
-@media (max-width: 860px) {
+@media (max-width: 900px) {
     .sobre-grade {
         flex-direction: column;
         /* Empilha o texto e o vídeo */
         gap: 32px;
-    }
-
-    .sobre-topo h2 {
-        font-size: 26px;
     }
 }
 
@@ -2290,7 +2297,7 @@ html {
 .aj-whatsapp {
     position: fixed;
     bottom: 25px;
-    right: 25px;
+    left: 25px;
 
     width: 62px;
     height: 62px;
@@ -2343,7 +2350,7 @@ html {
 /* TOOLTIP */
 .aj-whatsapp-tooltip {
     position: absolute;
-    right: 75px;
+    left: 75px;
 
     background: #080132;
     color: #fff;
